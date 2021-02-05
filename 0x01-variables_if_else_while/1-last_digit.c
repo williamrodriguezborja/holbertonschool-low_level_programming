@@ -1,9 +1,12 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <time.h>
-/* more headers goes there */
 
-/* betty style doc for function main goes there */
+
+/**
+ * main - short description
+ * Return: (0)
+ */
 int main(void)
 {
 	int n;
@@ -23,3 +26,4 @@ int main(void)
 		printf("and is less than 6 and not 0\n");
 	return (0);
 }
+
