@@ -1,11 +1,10 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <time.h>
-
-
 /**
- * main - short description
- * Return: (0)
+ * main - last digit
+ *
+ * Return: Always 0 (Success)
  */
 int main(void)
 {
@@ -15,9 +14,7 @@ int main(void)
 	n = rand() - RAND_MAX / 2;
 	int lastDigit = n % 10;
 
-	printf("Last digit of %d ", n);
-	printf("is %d ", lastDigit);
-
+	printf("Last digit of %d is %d ", n, lastDigit);
 	if (lastDigit > 5)
 		printf("and is greater than 5\n");
 	else if (lastDigit == 0)
@@ -26,4 +23,3 @@ int main(void)
 		printf("and is less than 6 and not 0\n");
 	return (0);
 }
-
