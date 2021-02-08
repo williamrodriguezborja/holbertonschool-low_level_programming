@@ -1,0 +1,19 @@
+#include <unistd.h>
+#include <stdio.h>
+
+int _putchar(char);
+
+/**
+ * main - print holberton
+ * Return: (0)
+ */
+int main(void)
+{
+	_putchar("Holberton");
+	return (0);
+}
+
+int _putchar(char c)
+{
+	return (write(1, &c, 1));
+}
