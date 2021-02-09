@@ -3,8 +3,7 @@
  * main - print alphabet by 10
  * Return: Success
  */
-void main(void)
+void print_alphabet_x10(void)
 {
-	_putchar("");
-	return (0);
+	_putchar('h');
 }
