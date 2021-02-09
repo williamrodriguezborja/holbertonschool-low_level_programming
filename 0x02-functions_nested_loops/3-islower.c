@@ -1,21 +1,11 @@
-#include <unistd.h>
-#include <stdio.h>
-#include "holberton.h"
 /**
- * _putchar - print to std out
- * @c: Characther Int or char
- * Return: int
+ * _islower -  is lowercase
+ * @c: character
+ * Return: Returns 1 if c is lowercase or 0 is uppercase
  */
-int _putchar(char c)
+int _islower(int c)
 {
-	return (write(1, &c, 1));
-}
-
-/**
- * main - print holberton
- * Return: (0)
- */
-int main(void)
-{
-	return (0);
+	if (c >= 65 && c <= 90)
+		return (0);
+	return (1);
 }
