@@ -1,19 +1,4 @@
-#include <unistd.h>
-#include <strings.h>
-#include <stdio.h>
 #include "holberton.h"
-/**
- * _putchar - print to std out
- * @c: Characther Int or char
- * Return: int
- */
-int _putchar(char c)
-{
-	return (write(1, &c, 1));
-}
-/**
- * print_alphabet - print to [a-z]
- */
 void print_alphabet(void)
 {
 	char c;
@@ -34,13 +19,4 @@ void print_alphabet_x10(void)
 	{
 		print_alphabet();
 	}
-}
-/**
- * main - print holberton
- * Return: (0)
- */
-int main(void)
-{
-	print_alphabet_x10();
-	return (0);
 }
