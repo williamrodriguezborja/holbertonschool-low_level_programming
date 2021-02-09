@@ -1,25 +1,10 @@
 #include "holberton.h"
 /**
- * print_alphabet - print the alphabet
+ * main - print alphabet by 10
+ * Return: Success
  */
-void print_alphabet(void)
+void main(void)
 {
-	char c;
-
-	for (c = 'a'; c <= 'z'; c++)
-	{
-		_putchar(c);
-	}
-	_putchar('\n');
-}
-
-/**
- * print_alphabet_x10 - print the alphabets
- */
-void print_alphabet_x10(void)
-{
-	for (int i = 0; i < 10; i++)
-	{
-		print_alphabet();
-	}
+	_putchar("");
+	return (0);
 }
