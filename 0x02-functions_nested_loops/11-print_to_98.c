@@ -18,7 +18,7 @@ void print_char_num(int n)
 	else if (n >= 100)
 	{
 		_putchar('0' + (n / 100));
-		_putchar('0' + (n / 10) / 10);
+		_putchar('0' + (n / 10) % 10);
 		_putchar('0' + (n % 10));
 	}
 	else
