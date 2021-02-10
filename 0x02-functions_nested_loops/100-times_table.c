@@ -53,11 +53,11 @@ void print_time_table(int n, int limit)
 		{
 			_putchar(',');
 			_putchar(' ');
-			_putchar(' ');
-			if (time <= 9)
-			{
+			if (time <= 99)
 				_putchar(' ');
-			}
+			if (time <= 9)
+				_putchar(' ');
+
 		}
 		print_num(time);
 	}
