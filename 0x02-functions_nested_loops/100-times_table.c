@@ -6,5 +6,10 @@
  */
 void print_times_table(int n)
 {
-	_putchar('0' + n);
+	int i;
+
+	for (i = 0; i <= n ; i++)
+	{
+		_putchar('0' + n);
+	}
 }
