@@ -7,27 +7,5 @@
 void print_times_table(int n)
 {
 	int i;
-
-	for (i = 0; i <= n ; i++)
-	{
-		int j;
-
-		for (j = 0 ; j <= n ; j++)
-		{
-			int time = i * j;
-
-			if (j > 0 && j <= n)
-			{
-				_putchar(',');
-				_putchar(' ');
-				if (time <= 99)
-					_putchar(' ');
-				if (time <= 9)
-					_putchar(' ');
-
-			}
-//			print_num(time);
-		}
-		_putchar('\n');
-	}
+	_putchar('\n');
 }
