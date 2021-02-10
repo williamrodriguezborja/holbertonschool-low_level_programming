@@ -6,6 +6,11 @@
  */
 void print_times_table(int n)
 {
+	if (n > 15 || n < 0)
+	{
+		_putchar('\n');
+		return;
+	}
 	int i;
 
 	for (i = 0; i <= n ; i++)
@@ -14,19 +19,7 @@ void print_times_table(int n)
 
 		for (j = 0 ; j <= n ; j++)
 		{
-			int time = i * j;
-
-			if (i > 0 && j <= n)
-			{
-				_putchar(',');
-				_putchar(' ');
-				if (time <= 99)
-					_putchar(' ');
-				if (time <= 9)
-					_putchar(' ');
-
-			}
-//			print_num(time);
+			_putchar('0' + j);
 		}
 		_putchar('\n');
 	}
