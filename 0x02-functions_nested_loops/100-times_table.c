@@ -23,13 +23,15 @@ void print_times_table(int n)
 				_putchar(' ');
 				if (product <= 99)
 					_putchar(' ');
-				if (product <=9)
+				if (product <= 9)
 					_putchar(' ');
 			}
 			if (product > 99)
 			{
 				_putchar('0' + product / 100);
-				product /= 10;
+				product %= 100;
+				if (product < 10)
+					_putchar('0');
 			}
 			if (product > 9)
 				_putchar('0' + product / 10);
