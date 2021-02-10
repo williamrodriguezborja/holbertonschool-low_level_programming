@@ -41,15 +41,15 @@ void print_num(int n)
  * @n: number of time
  * @limit: limit by each line
  */
-void print_time_table(int n, int limit)
+void print_time_table(int i, int n)
 {
-	int i;
+	int j;
 
-	for (i = 0 ; i <= limit ; i++)
+	for (j = 0 ; j <= n ; j++)
 	{
-		int time = n * i;
+		int time = i * j;
 
-		if (i > 0 && i <= limit)
+		if (i > 0 && j <= n)
 		{
 			_putchar(',');
 			_putchar(' ');

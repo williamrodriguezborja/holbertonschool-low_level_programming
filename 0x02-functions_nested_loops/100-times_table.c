@@ -10,6 +10,24 @@ void print_times_table(int n)
 
 	for (i = 0; i <= n ; i++)
 	{
-		_putchar('0' + n);
+		int j;
+
+		for (j = 0 ; j <= n ; j++)
+		{
+			int time = i * j;
+
+			if (i > 0 && j <= n)
+			{
+				_putchar(',');
+				_putchar(' ');
+				if (time <= 99)
+					_putchar(' ');
+				if (time <= 9)
+					_putchar(' ');
+
+			}
+			print_num(time);
+		}
+		_putchar('\n');
 	}
 }
