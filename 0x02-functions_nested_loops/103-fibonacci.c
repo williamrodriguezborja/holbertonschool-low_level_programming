@@ -5,9 +5,9 @@
  */
 int main(void)
 {
-	unsigned long f, t1 = 1, t2 = 2, total = 0, i = 0, limit = 4000000;
+	unsigned long f, t1 = 1, t2 = 2, total = 2, i = 0, limit = 4000000;
 
-	while (i <= limit)
+	while (total <= limit)
 	{
 		f = t1 + t2;
 		t1 = t2;
