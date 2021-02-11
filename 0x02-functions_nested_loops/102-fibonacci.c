@@ -6,7 +6,7 @@
 void fibonacci_until(int until)
 {
 	int i = 1;
-	unsigned long f, t1= 1, t2 = 2;
+	unsigned long f, t1 = 1, t2 = 2;
 
 	f = t1 + t2;
 	printf("%lu, %lu, ", t1, t2);
