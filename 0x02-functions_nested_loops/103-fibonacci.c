@@ -1,13 +1,5 @@
 #include <stdio.h>
 /**
- * fibonacci_even_total - print fibonacci sequence
- * @limit: number limit to print fibonacci
- */
-void fibonacci_even_total(unsigned long limit)
-{
-
-}
-/**
  * main - print total
  * Return: (Sucess)
  */
