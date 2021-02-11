@@ -5,7 +5,15 @@
  */
 void fibonacci_even_total(unsigned long limit)
 {
-	unsigned long f, t1 = 1, t2 = 2, total = 0, i = 3;
+
+}
+/**
+ * main - print total
+ * Return: (Sucess)
+ */
+int main(void)
+{
+	unsigned long f, t1 = 1, t2 = 2, total = 0, i = 3, limit = 4000000;
 
 	while (i <= limit)
 	{
@@ -17,13 +25,5 @@ void fibonacci_even_total(unsigned long limit)
 		i++;
 	}
 	printf("%ld\n", total);
-}
-/**
- * main - print total
- * Return: (Sucess)
- */
-int main(void)
-{
-	fibonacci_total(4000000);
 	return (0);
 }
