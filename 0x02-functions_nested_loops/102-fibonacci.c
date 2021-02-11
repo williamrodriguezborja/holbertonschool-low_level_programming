@@ -5,15 +5,19 @@
  */
 void fibonacci_until(int until)
 {
-	int f, t1 = 1, t2 = 2 , i = 0;
+	int i = 1;
+	unsigned long f, t1= 1, t2 = 2;
 
 	f = t1 + t2;
-	printf("%d, %d, ", t1, t2);
+	printf("%lu, %lu, ", t1, t2);
 
-	while (i <= until)
+	i = f;
+	while (i < until)
 	{
-		if (f != 34)
-			printf("%d, ", f);
+		printf("%lu", f);
+		if (i + 1 < until)
+			printf(", ");
+
 		t1 = t2;
 		t2 = f;
 		f = t1 + t2;
