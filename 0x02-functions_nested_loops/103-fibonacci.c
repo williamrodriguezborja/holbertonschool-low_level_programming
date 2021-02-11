@@ -1,37 +1,29 @@
 #include <stdio.h>
 /**
- * fibonacci_until - print fibonacci sequence
- * @until: number limit to print fibonacci
+ * fibonacci_even_total - print fibonacci sequence
+ * @limit: number limit to print fibonacci
  */
-void fibonacci_until(int until)
+void fibonacci_even_total(unsigned long limit)
 {
-	int i = 1;
-	unsigned long f, t1 = 1, t2 = 2;
+	unsigned long f, t1 = 1, t2 = 2, total = 0, i = 3;
 
-	f = t1 + t2;
-	printf("%lu", t2);
-
-	i = f;
-	while (i <= until)
+	while (i <= limit)
 	{
-		if ( f % 2 == 0)
-		{
-			printf(", ");
-			printf("%lu", f);
-		}
+		f = t1 + t2;
 		t1 = t2;
 		t2 = f;
-		f = t1 + t2;
+		if ((f % 2 == 0) && (f <= limit))
+			total += f;
 		i++;
 	}
-	printf("\n");
+	printf("%ld\n", total);
 }
 /**
- * main - print fibonacci sequence until
+ * main - print total
  * Return: (Sucess)
  */
 int main(void)
 {
-	fibonacci_until(10);
+	fibonacci_total(4000000);
 	return (0);
 }

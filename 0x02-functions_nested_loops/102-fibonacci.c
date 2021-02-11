@@ -17,7 +17,6 @@ void fibonacci_until(int until)
 		printf("%lu", f);
 		if (i < until)
 			printf(", ");
-
 		t1 = t2;
 		t2 = f;
 		f = t1 + t2;

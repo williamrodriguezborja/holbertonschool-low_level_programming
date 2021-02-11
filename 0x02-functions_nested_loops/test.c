@@ -1,58 +1,30 @@
-/******************************************************************************
-Welcome to GDB Online.
-GDB online is an online compiler and debugger tool for C, C++, Python, Java, PHP, Ruby, Perl,
-C#, VB, Swift, Pascal, Fortran, Haskell, Objective-C, Assembly, HTML, CSS, JS, SQLite, Prolog.
-Code, Compile, Run and Debug online from anywhere in world.
-*******************************************************************************/
+#include "holberton.h"
 #include <stdio.h>
-void times_table(void)
+
+/**
+ * main - Entry point
+ *
+ * Return: Always 0 (Success)
+ */
+int main(void)
 {
-	int i;
-	int j;
+	long int n, m, c, e, l;
 
-	int numero = 0;
-
-	for(i = 0; i<=9;i++)
+	n = 1;
+	m = 2;
+	e = 2;
+	l = 4000000;
+	c = 0;
+	while (c <= l)
 	{
-		for(j = 0; j<=9; j++)
+		c = m + n;
+		n = m;
+		m = c;
+		if ((c % 2 == 0) && (c <= l))
 		{
-			numero = i * j;
-
-			if(numero<9)
-			{
-				putchar(','); //putchar(44);
-				putchar(' '); //putchar(32);
-				putchar(' '); //putchar(32);
-				putchar('0' + numero);
-			}
-			else{
-				putchar('0' + numero/10);
-				putchar('0' + numero%10);
-
-				putchar(','); //putchar(44);
-				putchar(' '); //putchar(32);
-			}
-
+			e = e + c;
 		}
-		putchar('\n');
 	}
-}
-void times_table0(void)
-{
-	int i;
-	int j;
-
-	for(i = 0; i<=9;i++)
-	{
-		for(j = 0; j<=9; j++)
-		{
-			printf("%d, ",i*j);
-		}
-		printf("\n");
-	}
-}
-int main()
-{
-	times_table();
-	return 0;
+	printf("%li\n", e);
+	return (0);
 }
