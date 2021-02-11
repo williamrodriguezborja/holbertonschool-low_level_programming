@@ -12,10 +12,10 @@ void fibonacci_until(int until)
 	printf("%lu, %lu, ", t1, t2);
 
 	i = f;
-	while (i < until)
+	while (i <= until)
 	{
 		printf("%lu", f);
-		if (i + 1 < until)
+		if (i < until)
 			printf(", ");
 
 		t1 = t2;
