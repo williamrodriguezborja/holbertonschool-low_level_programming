@@ -1,5 +1,5 @@
 /**
- * 1-isdigit - evaluate is character is digit or not
+ * _isdigit - evaluate is character is digit or not
  * @c: int character.
  * Return: 1 is digit or 0 isn't.
  */
