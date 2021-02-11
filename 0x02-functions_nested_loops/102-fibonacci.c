@@ -14,12 +14,11 @@ void fibonacci_until(int until)
 	{
 		if (f != 34)
 			printf("%d, ", f);
-		else
-			printf("%d\n", f);
 		t1 = t2;
 		t2 = f;
 		f = t1 + t2;
 	}
+	printf("\n");
 }
 /**
  * main - print fibonacci sequence until
