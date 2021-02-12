@@ -6,23 +6,23 @@
 void print_triangle(int size)
 {
 	if (size < 1)
-	{
 		_putchar('\n');
-		return;
-	}
+	else{
 
-	int i, j, spaces = size - 1;
 
-	for (i = 0; i < size; i++)
-	{
-		spaces--;
-		for (j = 0; j < size; j++)
+		int i, j, spaces = size - 1;
+
+		for (i = 0; i < size; i++)
 		{
-			if (j <= spaces)
-				_putchar(' ');
-			else
-				_putchar('#');
+			spaces--;
+			for (j = 0; j < size; j++)
+			{
+				if (j <= spaces)
+					_putchar(' ');
+				else
+					_putchar('#');
+			}
+			_putchar('\n');
 		}
-		_putchar('\n');
 	}
 }
