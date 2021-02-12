@@ -7,9 +7,8 @@ void print_triangle(int size)
 {
 	if (size < 1)
 		_putchar('\n');
-	else{
-
-
+	else
+	{
 		int i, j, spaces = size - 1;
 
 		for (i = 0; i < size; i++)
