@@ -1,6 +1,6 @@
 #include "holberton.h"
 /**
- * more numbers - print numbers
+ * more_numbers - print numbers
  */
 void more_numbers(void)
 {
@@ -9,6 +9,7 @@ void more_numbers(void)
 	for (i = 0 ; i <= 14 ; i++)
 	{
 		int j;
+
 		for (j = 0 ; j <= 14; j++)
 		{
 			if (j < 10)
