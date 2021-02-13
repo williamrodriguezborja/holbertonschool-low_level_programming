@@ -1,8 +1,8 @@
 #include "holberton.h"
 #include <stdio.h>
 /**
- * main - check the code for Holberton School students.
- *
+ * print_number - print int characters
+ * @n: number to print
  * Return: Always 0.
  */
 void print_number(int n)
@@ -11,10 +11,10 @@ void print_number(int n)
 
 	if (n < 0)
 	{
-		n = -n;	tmp = n;
+		n = -n;
+		tmp = n;
 		_putchar('-');
 	}
-	
 	if (n == 0)
 		_putchar('0');
 	else
