@@ -16,7 +16,7 @@ void print_number(int n)
 	}
 	tmp = n;
 	if (n == INT_MIN)
-		_putchar('0');
+		tmp++;
 
 	while (tmp > 9)
 	{
