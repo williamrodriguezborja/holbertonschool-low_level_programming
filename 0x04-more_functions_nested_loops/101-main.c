@@ -1,4 +1,5 @@
 #include "holberton.h"
+#include "limits.h"
 
 /**
  * main - check the code for Holberton School students.
@@ -19,7 +20,7 @@ int main(void)
   _putchar('\n');
   print_number(3);
   _putchar('\n');
-  print_number(123456789);
+  print_number(INT_MAX);
   _putchar('\n');
 
 	return (0);

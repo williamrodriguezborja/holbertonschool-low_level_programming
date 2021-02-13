@@ -1,5 +1,5 @@
 #include "holberton.h"
-#include <stdio.h>
+#include <limits.h>
 /**
  * print_number - print int characters
  * @n: number to print
@@ -7,43 +7,28 @@
  */
 void print_number(int n)
 {
-	int digits = 0, tmp, tens = 1, first;
+	unsigned int tmp, tens = 1;
 
 	if (n < 0)
 	{
 		n = -n;
-		tmp = n;
 		_putchar('-');
 	}
-	if (n == 0)
+	tmp = n;
+	if (n == INT_MIN)
 		_putchar('0');
-	else
+
+	while (tmp > 9)
 	{
-		tmp = n;
-		while (tmp)
-		{
-			tmp /= 10;
-			if (digits >= 1)
-				tens *= 10;
-			digits++;
-		}
-		tmp = n;
-		while (digits > 0)
-		{
-			first = tmp / tens;
-			tmp -= tens * first;
-			_putchar('0' + first);
-			if (tmp < tens / 10)
-			{
-				_putchar('0');
-				digits -= 2;
-				tens /= 100;
-			}
-			else
-			{
-				tens /= 10;
-				digits--;
-			}
-		}
+		tmp /= 10;
+		tens *= 10;
 	}
+	tmp = n;
+	while (tens > 0)
+	{
+		_putchar('0' + tmp / tens);
+		tmp %= tens;
+		tens /= 10;
+	}
+
 }
