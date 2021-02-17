@@ -6,12 +6,13 @@
  */
 void rev_string(char *s)
 {
-	int start = 0, end = 0;
+	int start = 0, end = 0, int length;
 	char temp;
 
 	while (s[end] != 0)
 		end++;
 	end--;
+	length = end;
 	while (start < end)
 	{
 		temp = s[start];
@@ -20,4 +21,5 @@ void rev_string(char *s)
 		start++;
 		end--;
 	}
+	s[length] = '\0';
 }
