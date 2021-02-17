@@ -18,6 +18,8 @@ void puts_half(char *str)
 
 	for (i = middle; i < length ; i++)
 	{
+		if (str[i] == ' ')
+			continue;
 		_putchar(str[i]);
 	}
 
