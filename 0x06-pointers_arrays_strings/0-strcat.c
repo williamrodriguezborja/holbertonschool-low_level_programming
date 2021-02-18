@@ -1,18 +1,20 @@
 #include "holberton.h"
 #include <stdio.h>
 /**
- * char *_strcat(char *dest, char *src);
- * Return: char * with union
+ * _strcat - concat strs
+ * @dest: result of concat
+ * @src: strint to concat to first
+ * Return: concat String
  */
 char *_strcat(char *dest, char *src)
 {
-  int length = 0, i;
-  
-  while (dest[length])
-    length++;
+	int length = 0, i;
 
-  for (i = 0; src[i]; i++, length++)
-    dest[length] = src[i];
+	while (dest[length])
+		length++;
 
-  return dest;
+	for (i = 0; src[i]; i++, length++)
+		dest[length] = src[i];
+
+	return (dest);
 }
