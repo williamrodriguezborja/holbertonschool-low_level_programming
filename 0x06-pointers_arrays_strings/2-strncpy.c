@@ -6,13 +6,15 @@
  */
 char *_strncpy(char *dest, char *src, int n)
 {
-	int i;
+	int i = 0;
 
-	/* while (src[i]) */
-	/* 	l++; */
-
-	for (i=0; src[i] && (i < n ); i++)
+	for (;i < n && src[i]; i++)
 		dest[i] = src[i];
-//	dest[i] = 0;
+
+	while (i < n)
+	{
+		dest[i] = '\0';
+		i++;
+	}
 	return (dest);
 }
