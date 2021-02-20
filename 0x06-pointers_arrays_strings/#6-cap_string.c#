@@ -24,6 +24,14 @@ char *cap_string(char *s)
 
 	int is_first_letter, is_before_separator;
 
+	i  = 6
+	/*  s[6-1]   s[ 6 ]   */
+	/*   .   -   P */
+	if (s[i - 1] == is_separators &&  s[i +1 ] == is_letter)
+		to_uppercase(s[i+1]);
+	i++
+
+
 	for (; s[i] ; i++)
 	{
 		/* first letter */
