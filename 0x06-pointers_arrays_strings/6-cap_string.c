@@ -43,8 +43,8 @@ char *cap_string(char *s)
 			string_toupper(&s[i]);
 
 		/* else lower case */
-		else if (s[i] >= 65 && s[i] <= 90)
-			s[i] += 32;
+		/* else if (s[i] >= 65 && s[i] <= 90) */
+		/* 	s[i] += 32; */
 	}
 	return (s);
 }
