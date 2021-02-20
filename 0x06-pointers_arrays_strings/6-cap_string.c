@@ -20,7 +20,7 @@ char *string_toupper(char *s)
 char *cap_string(char *s)
 {
 	char *separators = " ,;.!?(){}\t\n\"";
-	int i = 0 , j;
+	int i = 0, j;
 
 	int is_first_letter, is_before_separator;
 
@@ -30,7 +30,7 @@ char *cap_string(char *s)
 		is_first_letter = i == 0;
 		/* before char is space or separator  convert to uppercase*/
 
-		j=0;
+		j = 0;
 		is_before_separator = 0;
 
 		while (separators[j] && !is_before_separator)
@@ -41,10 +41,6 @@ char *cap_string(char *s)
 		/* need change to uppercase */
 		if (is_first_letter || is_before_separator)
 			string_toupper(&s[i]);
-
-		/* else lower case */
-		/* else if (s[i] >= 65 && s[i] <= 90) */
-		/* 	s[i] += 32; */
 	}
 	return (s);
 }
