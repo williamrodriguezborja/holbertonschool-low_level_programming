@@ -1,3 +1,4 @@
+#include <stddef.h>
 /**
  * _strchr - find first occurrence and print after this all string.
  * @s: String which search character
