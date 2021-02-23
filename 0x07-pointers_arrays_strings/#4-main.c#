@@ -26,7 +26,7 @@ int main(void)
 	printf("%s\n", t);
 
 	t = _strpbrk("abcdef", "");
-	
+
 	printf("%s\n", t);
 	return (0);
 }
