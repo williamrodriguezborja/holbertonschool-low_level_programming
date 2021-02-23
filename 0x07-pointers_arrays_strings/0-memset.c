@@ -1,5 +1,5 @@
 /**
- * memset - set first n bytes in memory in s with b
+ * _memset - set first n bytes in memory in s with b
  * @s: pointer to data to fill
  * @b: content to fill s pointer
  * @n: number of times to repeat b character in s pointer
@@ -8,9 +8,8 @@
 char *_memset(char *s, char b, unsigned int n)
 {
 	unsigned int i = 0;
-	for (; i < n || s[i]; i++)
-	{
+
+	for (; i <= n; i++)
 		s[i] = b;
-	}
 	return (s);
 }

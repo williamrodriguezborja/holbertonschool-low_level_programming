@@ -1,6 +1,6 @@
 #include "holberton.h"
 #include <stdio.h>
-
+#include <string.h>
 /**
  * simple_print_buffer - prints buffer in hexa
  * @buffer: the address of memory to print
@@ -38,9 +38,13 @@ int main(void)
 {
 	char buffer[98] = {0x00};
 
-	simple_print_buffer(buffer, 98);
-	_memset(buffer, 0x01, 95);
+	/* simple_print_buffer(buffer, 98); */
+	/* _memset(buffer, 0x20, 16); */
+	/* printf("-------------------------------------------------\n"); */
+	/* simple_print_buffer(buffer, 98); */
+        simple_print_buffer(buffer, 20);
+	memset(buffer, 0x20, 16);
 	printf("-------------------------------------------------\n");
-	simple_print_buffer(buffer, 98);
+	simple_print_buffer(buffer, 20);
 	return (0);
 }
