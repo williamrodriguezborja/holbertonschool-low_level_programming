@@ -1,9 +1,9 @@
 #include <stdio.h>
 /**
- * print_array - print array of ints
- * @a: a is a pointer to array start
- * @n: size
- */
+* print_array - print array of ints
+* @a: a is a pointer to array start
+* @n: size
+*/
 void print_array(int *a, int n)
 {
 	int i;
