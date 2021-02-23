@@ -14,12 +14,5 @@ int main(void)
 
 	t = _strpbrk(s, f);
 	printf("%s\n", t);
-
-
-	s = "First, solve the problem. Then, write the code.";
-	f = "Holberton";
-	
-	t = _strpbrk(s, f);
-	printf("%s\n", t);
 	return (0);
 }
