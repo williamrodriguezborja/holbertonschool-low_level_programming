@@ -1,0 +1,9 @@
+/**
+ * void set_string
+ * @s: string to copy
+ * @to: string destiny
+ */
+void set_string(char **s, char *to)
+{
+	*s = &to;
+}
