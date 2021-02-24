@@ -7,8 +7,8 @@ void set_string(char **s, char *to)
 {
 	int i = 0;
 
-	for (; s[i]; i++)
+	for (; s[i] != to; i++)
 	{
-		s[i] = to[i];
+		s[i] = to;
 	}
 }
