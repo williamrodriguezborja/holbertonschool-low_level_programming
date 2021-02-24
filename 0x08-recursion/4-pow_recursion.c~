@@ -1,0 +1,17 @@
+/**
+ * _pow_recursion - calculate power of x to y
+ * @x: number to power
+ * @y: y number to times
+ * Return: pow of x elevate to y
+ */
+int _pow_recursion(int x, int y)
+{
+	if (x < 0)
+		x = -x;
+	if (y < 0)
+		y = -y;
+	if (y == 0)
+		return x;
+
+	return x * _pow_recursion(x, y - 1);
+}
