@@ -21,7 +21,7 @@ int check_palindrome(char *text, int start, int end)
 {
 	if (text[start] != text[end])
 		return (0);
-	if (start < end)
+	if (start > end)
 		return (1);
 	return (check_palindrome(text, ++start, --end));
 }
