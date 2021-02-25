@@ -1,6 +1,5 @@
 /**
- * check_palindrome - check all words left to right and
- *                    rigth to left if are equals with recursion
+ * check_palindrome - check if palindrome with recursion
  * @text: to check if palindrome
  * @start: manage order left to right
  * @end: manage order right to left
@@ -10,10 +9,8 @@ int check_palindrome(char *text, int start, int end)
 {
 	if (text[start] != text[end])
 		return (0);
-
 	if (start < end)
 		return (1);
-
 	return (check_palindrome(text, ++start, --end));
 }
 
