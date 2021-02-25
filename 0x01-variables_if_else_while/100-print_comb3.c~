@@ -1,0 +1,15 @@
+#include <stdio.h>
+/**
+ * main - print all different combination of two numbers
+ * Return: (success)
+ */
+int main(void)
+{
+	int i;
+
+	for (; i < 90;i++)
+	{
+		_putchar('0' + (i % 10));
+		_putchar('0' + (i / 10));
+	}
+}
