@@ -22,13 +22,11 @@ int check_palindrome(char *text, int start, int end)
 int is_palindrome(char *s)
 {
 	int length = 0;
-	/* edge cases */
 	if (*s == '\0')
 		return (0);
 
 	for (; s[length]; length++)
 	{
 	}
-
 	return (check_palindrome(s, 0, length - 1));
 }
