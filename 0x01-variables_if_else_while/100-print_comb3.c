@@ -6,13 +6,14 @@
 int main(void)
 {
 	int i;
-	char first, second;
+
 
 	for (i = 1; i < 90; i++)
 	{
-		if (i / 10 == i % 10)
+		char first = i / 10, second = i % 10;
+		if (first == second)
 			continue;
-		if ((i > 9 && ((i / 10) - (i % 10) > 0)))
+		if ((i > 9 && (first - second) > 0))
 			continue;
 		putchar('0' + first);
 		putchar('0' + second);
@@ -23,4 +24,5 @@ int main(void)
 		}
 	}
 	putchar('\n');
+	return (0);
 }
