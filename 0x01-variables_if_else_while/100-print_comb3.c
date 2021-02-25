@@ -10,7 +10,7 @@ int main(void)
 
 	for (i = 1; i < 90; i++)
 	{
-		char first = i / 10, second = i % 10;
+		int first = i / 10, second = i % 10;
 		if (first == second)
 			continue;
 		if ((i > 9 && (first - second) > 0))
