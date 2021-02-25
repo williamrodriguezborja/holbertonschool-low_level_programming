@@ -12,7 +12,7 @@ int main(void)
 	{
 		if (i / 10 == i % 10)
 			continue;
-		if ((i > 9 && (i / 10) - (i % 10) > 0))
+		if ((i > 9 && ((i / 10) - (i % 10) > 0)))
 			continue;
 		putchar('0' + first);
 		putchar('0' + second);
