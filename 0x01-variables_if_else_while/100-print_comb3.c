@@ -5,16 +5,14 @@
  */
 int main(void)
 {
-	int i = 1;
-	char first;
-	char second;
+	int i;
+	char first, second;
 
-	for (; i < 90; i++)
+	for (i = 1; i < 90; i++)
 	{
-		first = (i / 10);
-		second = (i % 10);
-
-		if ((i > 9 && first - second > 0) || first == second)
+		if (i / 10 == i % 10)
+			continue;
+		if ((i > 9 && (i / 10) - (i % 10) > 0))
 			continue;
 		putchar('0' + first);
 		putchar('0' + second);
