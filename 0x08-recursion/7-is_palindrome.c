@@ -1,4 +1,16 @@
 /**
+ * _strlen_recursion - find length of the string and return this length.
+ * @s: string for find length
+ * Return: length of string s
+*/
+int _strlen_recursion(char *s)
+{
+	if (*s == '\0')
+		return (0);
+	return (1 + _strlen_recursion(s + 1));
+}
+
+/**
  * check_palindrome - check if palindrome with recursion
  * @text: to check if palindrome
  * @start: manage order left to right
@@ -21,11 +33,7 @@ int check_palindrome(char *text, int start, int end)
  */
 int is_palindrome(char *s)
 {
-	int length = 0;
 	if (*s == '\0')
 		return (0);
-	for (; s[length]; length++)
-	{
-	}
-	return (check_palindrome(s, 0, length - 1));
+	return (check_palindrome(s, 0, _strlen_recursion(s) - 1));
 }
