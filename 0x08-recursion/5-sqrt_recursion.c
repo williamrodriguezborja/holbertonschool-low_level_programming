@@ -8,7 +8,7 @@ int _sqrt(int n, int i)
 {
 	if (n == i) /* base case not found sqrt */
 		return (-1);
-	if (n / i == i && n % i == 0)	/* base case success to find sqrt */
+	if (n / i == i && n % i == 0) /* base case success to find sqrt */
 		/* 1024 / 32 == 32 && n % 32 == 0 */
 		return (i);
 	return (_sqrt(n, ++i)); /* recursion */

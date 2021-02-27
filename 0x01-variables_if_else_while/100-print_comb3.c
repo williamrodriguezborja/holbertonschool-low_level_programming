@@ -7,7 +7,6 @@ int main(void)
 {
 	int i;
 
-
 	for (i = 1; i < 90; i++)
 	{
 		int first = i / 10, second = i % 10;

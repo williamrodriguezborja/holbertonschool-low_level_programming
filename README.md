@@ -1,3 +1,3 @@
 # holbertonschool-low_level_programming
 
-this is a C project
+## this is a C project
