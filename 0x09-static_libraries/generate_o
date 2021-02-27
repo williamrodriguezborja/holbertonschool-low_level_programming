@@ -24,4 +24,5 @@ gcc -c ../0x04-more_functions_nested_loops/0-isupper.c \
 ar -rc libholberton.a *.o
 ar -t libholberton.a
 nm libholberton.a 
+rm *.o
 
