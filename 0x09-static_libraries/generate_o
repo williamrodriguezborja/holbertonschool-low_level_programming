@@ -17,12 +17,11 @@ gcc -c ../0x04-more_functions_nested_loops/0-isupper.c \
        ../0x02-functions_nested_loops/4-isalpha.c \
        ../0x07-pointers_arrays_strings/4-strpbrk.c \
        ../0x07-pointers_arrays_strings/5-strstr.c \
-       ../0x05-pointers_arrays_strings/9-strcpy.c \
        ../0x02-functions_nested_loops/6-abs.c \
+       ../0x05-pointers_arrays_strings/9-strcpy.c \
        ../0x08-recursion/_putchar.c
 
 ar -rc libholberton.a *.o
 ar -t libholberton.a
-rm ./*.o
 nm libholberton.a 
 
