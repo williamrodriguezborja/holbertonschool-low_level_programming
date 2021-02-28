@@ -19,6 +19,8 @@ int main(int argc, char **argv)
 
 	while (argc--)
 	{
+		if (*(argv + argc) == '0')
+			continue;
 		n = 0;
 		n = atoi(*(argv + argc));
 
