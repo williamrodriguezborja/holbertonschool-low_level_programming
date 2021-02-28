@@ -1,6 +1,5 @@
 #include <stdlib.h>
 #include <stdio.h>
-#include <string.h>
 
 /**
  * main - print product of multiplication of two arguments
@@ -8,7 +7,7 @@
  * @argv: arguments
  * Return: (Success)
  */
-int main(int argc, char *argv[])
+int main(int argc, char **argv)
 {
 	/* first edge case Failure*/
 	if (argc < 3)
