@@ -1,6 +1,5 @@
-#!/bin/sh
-
-cp     ../0x04-more_functions_nested_loops/0-isupper.c \
+#!/bin/bash
+cp       ../0x04-more_functions_nested_loops/0-isupper.c \
        ../0x07-pointers_arrays_strings/0-memset.c \
        ../0x06-pointers_arrays_strings/0-strcat.c \
        ../0x04-more_functions_nested_loops/1-isdigit.c \
@@ -21,7 +20,7 @@ cp     ../0x04-more_functions_nested_loops/0-isupper.c \
        ../0x05-pointers_arrays_strings/9-strcpy.c \
        ../0x08-recursion/_putchar.c \
        .
-gcc -c *.c
+gcc -c -Wall -Werror -Wextra --pedantic *.c
 ar rc liball.a *.o
 ranlib liball.a
 rm *.o
