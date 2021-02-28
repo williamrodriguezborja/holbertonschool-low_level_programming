@@ -3,6 +3,9 @@
 
 /**
  * main - print whats my name
+ * @argc: counter of arguments
+ * @argv: arguments array
+ * Return: (Success)
  */
 int main(int argc, char **argv)
 {
