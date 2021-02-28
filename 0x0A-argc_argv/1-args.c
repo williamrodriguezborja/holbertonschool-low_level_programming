@@ -10,6 +10,6 @@
 int main(int argc, char *argv[] __attribute__((unused)))
 {
 	argv = NULL;
-	printf("%d\n", argc);
+	printf("%d\n", argc - 1);
 	return (EXIT_SUCCESS);
 }
