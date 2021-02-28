@@ -17,9 +17,9 @@ int main(int argc, char **argv)
 		return (EXIT_SUCCESS);
 	}
 
-	while (argc--)
+	while (argc-- && argc > 0)
 	{
-		if (*(argv + argc) == '0')
+		if (**(argv + argc) == '0')
 			continue;
 		n = 0;
 		n = atoi(*(argv + argc));
