@@ -20,13 +20,13 @@ int main(int argc, char *argv[])
 
 	cents = atoi(argv[1]);
 
-	while (tmp < cents)
+	while (cents)
 	{
-		tmp += money[c];
+		tmp -= money[c];
 		coins_used++;
-		if (tmp > cents)
+		if (tmp < cents)
 		{
-			tmp -= money[c];
+			tmp += money[c];
 			c++;
 			coins_used--;
 		}
