@@ -7,17 +7,28 @@
  * @argv: arguments
  * Return: (Success)
  */
-int main(int argc, char **argv)
+int main(int argc, char *argv[])
 {
-	int cents[] = {25, 10, 5, 2, 1};
-	int amount = atoi(argv[1]), coin = 0, coins_used = 0, tmp = 0;
-
 	if (argc != 2)
 	{
 		printf("Error\n");
 		return (EXIT_FAILURE);
 	}
 
+	int cents[] = {25, 10, 5, 2, 1}, coins_used = 0, amount = atoi(argv[1]),
+	coin = 0;
+
+	while (amount)
+	{
+		amount -= cents[coin];
+		coins_used++;
+		if (amount < 0)
+		{
+			amount += cents[coin];
+			coin++;
+			coins_used--;
+		}
+	}
 	printf("%d\n", coins_used);
 	return (EXIT_SUCCESS);
 }
