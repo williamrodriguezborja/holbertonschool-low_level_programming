@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 /**
  * main - Give number and print min coins used to achive amount
@@ -14,7 +15,7 @@ int main(int argc, char **argv)
 		return (1);
 	}
 
-	printf("%d", arg + 1);
+	printf("%d\n", atoi(*(argv+1)));
 
 	return (0);
 }
