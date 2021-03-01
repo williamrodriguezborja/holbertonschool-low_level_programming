@@ -10,13 +10,15 @@
 int main(int argc, char *argv[])
 {
 	int money[] = {25, 10, 5, 2, 1};
-	int cents = atoi(argv[1]), tmp = 0, c = 0, coins_used = 0;
+	unsigned int cents = 0, tmp = 0, c = 0, coins_used = 0;
 
 	if (argc != 2)
 	{
 		printf("Error\n");
 		return (1);
 	}
+
+	cents = atoi(argv[1]);
 
 	while (tmp < cents)
 	{
