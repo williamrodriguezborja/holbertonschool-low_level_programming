@@ -18,8 +18,6 @@ int main(int argc, char *argv[])
 		return (1);
 	}
 
-
-
-	printf("%d, %ls\n", amount, money);
+	printf("%d %d, %ls\n", amount, atoi(argv[1]), money);
 	return (0);
 }
