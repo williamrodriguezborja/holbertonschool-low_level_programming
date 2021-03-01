@@ -20,6 +20,6 @@ int main(int argc, char *argv[])
 
 	cents = atoi(argv[1]);
 
-	printf("%d %d, %ls\n", cents, money);
+	printf("%d %ls\n", cents, money);
 	return (0);
 }
