@@ -18,7 +18,7 @@ int main(int argc, char **argv)
 		return (1);
 	}
 
-	printf("%d\n", amount);
+	printf("%d, %ls\n", amount, cents);
 
 	return (0);
 }
