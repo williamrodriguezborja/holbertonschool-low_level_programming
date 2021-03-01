@@ -10,7 +10,7 @@
 int main(int argc, char *argv[])
 {
 	int money[] = {25, 10, 5, 2, 1};
-	unsigned int cents = 0, tmp = 0, c = 0, coins_used = 0;
+	int cents = 0, c = 0, coins_used = 0;
 
 	if (argc != 2)
 	{
@@ -19,14 +19,16 @@ int main(int argc, char *argv[])
 	}
 
 	cents = atoi(argv[1]);
+	if (cents < 0)
+		cents = 0;
 
 	while (cents)
 	{
-		tmp -= money[c];
+		cents -= money[c];
 		coins_used++;
-		if (tmp < cents)
+		if (cents < 0)
 		{
-			tmp += money[c];
+			cents += money[c];
 			c++;
 			coins_used--;
 		}
