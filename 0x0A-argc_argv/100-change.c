@@ -10,7 +10,7 @@
 int main(int argc, char *argv[])
 {
 	int money[] = {25, 10, 5, 2, 1};
-	int amount = 0;
+	int cents = 0;
 
 	if (argc != 2)
 	{
@@ -18,6 +18,8 @@ int main(int argc, char *argv[])
 		return (1);
 	}
 
-	printf("%d %d, %ls\n", amount, atoi(argv[1]), money);
+	cents = atoi(argv[1]);
+
+	printf("%d %d, %ls\n", cents, money);
 	return (0);
 }
