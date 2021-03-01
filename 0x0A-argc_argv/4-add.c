@@ -1,6 +1,18 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+int is_only_digits(char *c)
+{
+	int i = 0;
+	while (c[i])
+	{
+		if (c[i] <= 48 || c[i] >= 57)
+			return 0;
+		i++;
+	}
+	return (1);
+}
+
 /**
  * main - print product of multiplication of two arguments
  * @argc: counter of arguments
@@ -9,7 +21,7 @@
  */
 int main(int argc, char **argv)
 {
-	int result = 0, n;
+	int result = 0, i = 1;
 	/* first edge case Failure*/
 	if (argc == 1)
 	{
@@ -17,19 +29,14 @@ int main(int argc, char **argv)
 		return (EXIT_SUCCESS);
 	}
 
-	while (argc-- && argc > 0)
+	for (; i < argc; i++)
 	{
-		if (**(argv + argc) == '0')
-			continue;
-		n = 0;
-		n = atoi(*(argv + argc));
-
-		if (!n)
+		if (!is_only_digits(*(argv + i)))
 		{
 			printf("Error\n");
 			return (EXIT_FAILURE);
 		}
-		result += n;
+		result += atoi(*(argv + i));
 	}
 	printf("%d\n", result);
 	return (EXIT_SUCCESS);
