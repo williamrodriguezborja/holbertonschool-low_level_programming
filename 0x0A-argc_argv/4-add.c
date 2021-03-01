@@ -1,13 +1,19 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+/**
+ * is_only_digits - check is string contains only digits
+ * @c: char to check
+ * Return: 0 or 1 is only digits
+*/
 int is_only_digits(char *c)
 {
 	int i = 0;
+
 	while (c[i])
 	{
 		if (c[i] <= 48 || c[i] >= 57)
-			return 0;
+			return (0);
 		i++;
 	}
 	return (1);
