@@ -12,7 +12,7 @@ int is_only_digits(char *c)
 
 	while (c[i])
 	{
-		if (c[i] <= 48 || c[i] >= 57)
+		if (!(c[i] >= 48 && c[i] <= 57))
 			return (0);
 		i++;
 	}
