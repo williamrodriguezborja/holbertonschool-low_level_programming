@@ -14,8 +14,8 @@ int main(int argc, char **argv)
 		printf("Error\n");
 		return (1);
 	}
-
-	printf("%d\n", atoi(*(argv + 1)));
+	int amount = atoi(*(argv + 1));
+	printf("%d\n", amount);
 
 	return (0);
 }
