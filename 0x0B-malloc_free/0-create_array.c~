@@ -1,0 +1,38 @@
+#include <stdlib.h>
+#include <stdio.h>
+
+/**
+ * create_array - create new array and fill with c char
+ *  @size:  size of the array
+ *  @c  char to fill array
+ */
+char *create_array(unsigned int size, char c)
+{
+	Char *pointer;
+	int i;
+
+        /* edge case failure */
+	if (!size)
+		return NULL;
+         /*normal case*/
+
+         /* 1. tomar el size reservar size * int en memoria */
+
+	pointer = malloc(sizeof(char) * size);
+
+         /* 1. edge case failure */
+
+	if (pointer == NULL)
+		return NULL;
+
+	/* 2. tomar puntero y iterar la memoria desde 0 hasta size */
+
+	for (i = 0; i < size; i++)
+	{
+		/*   2.1  llenando el array con el char c */
+		*(pointer + i) = c;
+	}
+	/* return  pointer and*/
+
+	return (pointer);
+}
