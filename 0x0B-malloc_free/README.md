@@ -7,4 +7,4 @@ _This is a project learning about malloc and free_
 ## Files
 
 * [README.md](./README.md)
-* [holberton.h] [./holberton.h]
+* [holberton.h](./holberton.h)
