@@ -33,6 +33,7 @@ char *argstostr(int ac, char **av)
 		for (j = 0; av[i][j]; j++, size++)
 			new_string[size] = av[i][j];
 		new_string[size++] = '\n';
+		i++;
 	}
 
 	new_string[size] = '\0';

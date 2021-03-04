@@ -21,11 +21,7 @@ gcc -c ../0x04-more_functions_nested_loops/0-isupper.c \
        ../0x05-pointers_arrays_strings/9-strcpy.c \
        ../0x08-recursion/_putchar.c
 
-
-
-
-ar -rc libholberton.a *.o
+ar -rcs libholberton.a *.o
 ar -t libholberton.a
-nm libholberton.a 
+nm libholberton.a
 rm *.o
-
