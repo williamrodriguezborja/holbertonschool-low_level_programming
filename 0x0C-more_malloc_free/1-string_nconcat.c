@@ -11,7 +11,7 @@
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	char *str;
-	unsigned int i = 0, j = 0, len1 = 0, size = 0;
+	unsigned int i = 0, j = 0, len1 = 0, len2 = 0, size = 0;
 
 	if (!s1 && !s2) /* edge case any s is null*/
 		return (malloc(sizeof(char)));
@@ -21,6 +21,15 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		for (; s1[len1]; len1++)
 		{}
 	}
+
+	if (s2) /* get length of two strings*/
+	{
+		for (; s2[len2]; len2++)
+		{}
+	}
+
+	if (n > len2)
+		n = len2;
 
 	size = len1 + n;
 
