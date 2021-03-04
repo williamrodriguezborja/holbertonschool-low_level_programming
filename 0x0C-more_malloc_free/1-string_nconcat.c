@@ -37,7 +37,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	if (!str)
 		return (NULL);
 
-	for (; i < size || i < n; i++) /* fill new string */
+	for (; i < size || i <= n; i++) /* fill new string */
 	{
 		if (i < len1) /* if copy first string */
 			str[i] = s1[i];
