@@ -11,16 +11,21 @@ char *str_concat(char *s1, char *s2)
 	int i = 0, j = 0, len1 = 0, len2 = 0, size = 0;
 
 	/* edge case any s is null*/
-	if (!s1 || !s2)
+	if (!s1 && !s2)
 		return (NULL);
 
-	/* get length of two strings*/
-	for (; s1[len1]; len1++)
-	{}
+        /* get length of two strings*/
+	if (s1)
+	{
+		for (; s1[len1]; len1++)
+		{}
+	}
 
-	for (; s2[len2]; len2++)
-	{}
-
+	if (s2)
+	{
+		for (; s2[len2]; len2++)
+		{}
+	}
 	size = len1 + len2 + 1;
 
 	/* reserve this space based of lengths*/
