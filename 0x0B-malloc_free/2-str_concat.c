@@ -10,12 +10,10 @@ char *str_concat(char *s1, char *s2)
 	char *str;
 	int i = 0, j = 0, len1 = 0, len2 = 0, size = 0;
 
-	/* edge case any s is null*/
-	if (!s1 && !s2)
+	if (!s1 && !s2) /* edge case any s is null*/
 		return (NULL);
 
-        /* get length of two strings*/
-	if (s1)
+	if (s1) /* get length of two strings*/
 	{
 		for (; s1[len1]; len1++)
 		{}
