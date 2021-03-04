@@ -29,9 +29,8 @@ char *_strdup(char *str)
 	/* 3. fill new string with data of old string */
 
 	for (; i < length; i++)
-	{
 		new_string[i] = str[i];
-	}
+	
 	new_string[i] = '\0';
 
 	/* 4. return new string */
