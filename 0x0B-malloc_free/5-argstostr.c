@@ -9,7 +9,7 @@
 char *argstostr(int ac, char **av)
 {
 	char *new_string;
-	int i = 1, j = 0, size = 0;
+	int i = 0, j = 0, size = 0;
 
 	/* edge case */
 	if (!ac || !av)
@@ -29,7 +29,7 @@ char *argstostr(int ac, char **av)
 
 	new_string = malloc(sizeof(char) * (size + 1));
 
-	i = 1, size = 0;
+	i = 0, size = 0;
 
 	while (i < ac)
 	{
