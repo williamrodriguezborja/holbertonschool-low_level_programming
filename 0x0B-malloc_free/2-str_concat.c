@@ -12,7 +12,7 @@ char *str_concat(char *s1, char *s2)
 
 	/* edge case any s is null*/
 	if (!s1 || !s2)
-		return ("");
+		return (str);
 
 	/* get length of two strings*/
 	for (; s1[len1]; len1++)
@@ -25,6 +25,9 @@ char *str_concat(char *s1, char *s2)
 
 	/* reserve this space based of lengths*/
 	str = malloc(sizeof(char) * size);
+
+	if (!str)
+		return (NULL);
 
 	for (; i < size; i++) /* fill new string */
 	{
