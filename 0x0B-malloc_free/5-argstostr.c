@@ -16,10 +16,9 @@ char *argstostr(int ac, char **av)
 		return (NULL);
 
 	/* normal case */
-	for (;i < ac; i++, size++)
+	for (; i < ac; i++, size++)
 	{
-		j = 0;
-		for (j = 0;av[i][j]; j++, size++)
+		for (j = 0; av[i][j]; j++, size++)
 		{}
 	}
 
@@ -33,10 +32,9 @@ char *argstostr(int ac, char **av)
 	{
 		for (j = 0; av[i][j]; j++, size++)
 			new_string[size] = av[i][j];
-		if (++i != ac)
-			new_string[size++] = '\n';
+		new_string[size++] = '\n';
 	}
 
-	new_string[++size] = '\0';
+	new_string[size] = '\0';
 	return (new_string);
 }
