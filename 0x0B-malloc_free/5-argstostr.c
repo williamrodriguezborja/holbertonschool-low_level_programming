@@ -16,15 +16,11 @@ char *argstostr(int ac, char **av)
 		return (NULL);
 
 	/* normal case */
-	while (i < ac)
+	for (;i < ac; i++, size++)
 	{
 		j = 0;
-		while (av[i][j])
-		{
-			j++;
-			size++;
-		}
-		i++;
+		for (j = 0;av[i][j]; j++, size++)
+		{}
 	}
 
 	new_string = malloc(sizeof(char) * (size + 1));
@@ -37,8 +33,8 @@ char *argstostr(int ac, char **av)
 	{
 		for (j = 0; av[i][j]; j++, size++)
 			new_string[size] = av[i][j];
-		new_string[size++] = '\n';
-		i++;
+		if (++i != ac)
+			new_string[size++] = '\n';
 	}
 
 	new_string[++size] = '\0';
