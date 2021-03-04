@@ -26,10 +26,10 @@ char *str_concat(char *s1, char *s2)
 		for (; s2[len2]; len2++)
 		{}
 	}
-	size = len1 + len2 + 1;
+	size = len1 + len2;
 
 	/* reserve this space based of lengths*/
-	str = malloc(sizeof(char) * size);
+	str = malloc(sizeof(char) * size + 1);
 
 	if (!str)
 		return (NULL);
