@@ -12,7 +12,7 @@ char *str_concat(char *s1, char *s2)
 
 	/* edge case any s is null*/
 	if (!s1 || !s2)
-		return (str);
+		return (NULL);
 
 	/* get length of two strings*/
 	for (; s1[len1]; len1++)
