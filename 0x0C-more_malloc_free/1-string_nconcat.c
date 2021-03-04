@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 /**
-* str_concat - concatenate two strings and return new string
+* string_nconcat - concatenate two strings and return new string
 * @s1: first string
 * @s2: second string
 * @n: number of chars
