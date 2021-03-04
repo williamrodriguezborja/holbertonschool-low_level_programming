@@ -19,19 +19,20 @@ char *_strdup(char *str)
 	/* 1. search length to know many memory need*/
 
 	for (; str[length]; length++)
-	{
-	}
+	{}
 
 	/* 2. reserve memory needed*/
 
-	new_string = malloc(sizeof(char) * length);
+	new_string = malloc(sizeof(char) * (length + 1));
+
+	if (!new_string)
+		return (NULL);
 
 	/* 3. fill new string with data of old string */
 
 	for (; i < length; i++)
-	{
 		new_string[i] = str[i];
-	}
+
 	new_string[i] = '\0';
 
 	/* 4. return new string */
