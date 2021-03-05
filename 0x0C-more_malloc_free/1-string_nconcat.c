@@ -43,15 +43,15 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	len2 = str_len(s2);
 
 	if (n < len2)
-		len2 = n - 1;
-	size = (len1 + len2) + 1;
+		len2 = n;
+	size = (len1 + len2);
 
        /* reserve this space based of lengths*/
 	str = malloc(sizeof(char) * size);
 	if (!str)
 		return (NULL);
 
-	for (; i < size || i < len2; i++) /* fill new string */
+	for (; i < size || j < len2; i++) /* fill new string */
 	{
 		if (i < len1) /* if copy first string */
 			str[i] = s1[i];
