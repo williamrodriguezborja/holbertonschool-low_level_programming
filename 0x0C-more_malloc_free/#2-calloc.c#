@@ -1,0 +1,27 @@
+#include "holberton.h"
+/**
+* _calloc - this function allocate memory for create a new array with nmemb
+*            elements each with size
+* @nmemb: num memory elements
+* @size:  size of
+* Return: Always (buffer)
+*/
+void *_calloc(unsigned int nmemb, unsigned int size)
+{
+	char *buffer;
+	long i;
+	int memory_size;
+
+	if (!nmemb || !size)
+		return (NULL);
+
+	memory_size = nmemb * size;
+	buffer = malloc(memory_size);
+	if (!buffer)
+		return (NULL);
+
+	for (i = 0; i < memory_size; i++)
+		buffer[i] = 0;
+
+	return ((void *)buffer);
+}
