@@ -2,13 +2,18 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-
-unsigned int str_len(char *s1)
+/**
+ * str_len - calculate length of a s1
+ * @str: string to calculate length
+ * Return: length unsigned int
+*/
+unsigned int str_len(char *str)
 {
 	unsigned int len = 0;
-	if (s1) /* get length of two strings*/
+
+	if (str) /* get length of two strings*/
 	{
-		for (; s1[len]; len++)
+		for (; str[len]; len++)
 		{}
 	}
 	return (len);
