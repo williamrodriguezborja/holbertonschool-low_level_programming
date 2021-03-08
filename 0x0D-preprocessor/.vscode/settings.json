@@ -1,5 +1,6 @@
 {
 	"files.associations": {
-		"0-object_like_macro.h": "c"
+		"0-object_like_macro.h": "c",
+		"3-function_like_macro.h": "c"
 	}
 }
