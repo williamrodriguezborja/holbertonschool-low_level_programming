@@ -36,12 +36,9 @@ char *str_copy(char *name)
  */
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	dog_t *new_dog = malloc(sizeof(dog_t));
+	dog_t *new_dog; /* create a new dog */
 
-	if (!new_dog)
-		return (NULL);
-
-	new_dog->age = age;
+	new_dog->age = age; /* llego una copia */
 	new_dog->name = str_copy(name);
 
 	if (!new_dog->name)
