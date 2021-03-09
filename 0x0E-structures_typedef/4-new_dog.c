@@ -45,13 +45,16 @@ dog_t *new_dog(char *name, float age, char *owner)
 	new_dog->name = str_copy(name);
 
 	if (!new_dog->name)
+	{
+		free(new_dog);
 		return (NULL);
+	}
 
 	new_dog->owner = str_copy(owner);
 
 	if (!new_dog->owner)
 	{
-		free(new_dog->owner);
+		free(new_dog->name);
 		free(new_dog);
 		return (NULL);
 	}
