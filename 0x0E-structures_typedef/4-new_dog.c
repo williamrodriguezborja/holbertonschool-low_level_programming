@@ -15,7 +15,7 @@ char *str_copy(char *name)
 	for (; name[len] ; len++)
 	{}
 
-	copy = malloc(sizeof(char) * len);
+	copy = malloc(sizeof(char) * (len + 1));
 
 	if (!copy)
 		return (NULL);
@@ -24,7 +24,7 @@ char *str_copy(char *name)
 	{
 		copy[i] = name[i];
 	}
-
+	copy[i] = '\0';
 	return (copy);
 }
 
@@ -44,7 +44,14 @@ dog_t *new_dog(char *name, float age, char *owner)
 
 	new_dog->age = age;
 	new_dog->name = str_copy(name);
+
+	if (new_dog->name)
+		return (NULL);
+
 	new_dog->owner = str_copy(owner);
+
+	if (new_dog->owner)
+		return (NULL);
 
 	return (new_dog);
 }
