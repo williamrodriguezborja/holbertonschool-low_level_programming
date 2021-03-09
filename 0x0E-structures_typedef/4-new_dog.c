@@ -1,5 +1,6 @@
 #include "dog.h"
 #include <stdlib.h>
+#include <stdio.h>
 
 /**
  *  str_copy - copy string
@@ -14,6 +15,9 @@ char *str_copy(char *name)
 	{}
 
 	char *copy = malloc(sizeof(char) * len);
+
+	if (!copy)
+		return (NULL);
 
 	for (; i < len; i++)
 	{
@@ -33,6 +37,9 @@ char *str_copy(char *name)
 dog_t *new_dog(char *name, float age, char *owner)
 {
 	dog_t *new_dog = malloc(sizeof(dog_t));
+
+	if (!new_dog)
+		return (NULL);
 
 	new_dog->age = age;
 	new_dog->name = str_copy(name);
