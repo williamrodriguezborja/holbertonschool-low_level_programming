@@ -10,11 +10,12 @@
 char *str_copy(char *name)
 {
 	int len = 0, i = 0;
+	char *copy;
 
 	for (; name[len] ; len++)
 	{}
 
-	char *copy = malloc(sizeof(char) * len);
+	copy = malloc(sizeof(char) * len);
 
 	if (!copy)
 		return (NULL);
