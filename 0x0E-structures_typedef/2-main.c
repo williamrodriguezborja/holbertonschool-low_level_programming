@@ -13,6 +13,6 @@ int main(void)
     my_dog.name = "Django";
     my_dog.age = 3.5;
     my_dog.owner = "Bob";
-    print_dog(&my_dog);
+    print_dog(NULL);
     return (0);
 }
