@@ -1,6 +1,7 @@
 #ifndef DOG_H
 #define DOG_H
 
+
 /**
  * struct dog - is a structure representation of Dog
  * @name: Name of dog
@@ -15,4 +16,5 @@ struct dog
 	char *owner;
 };
 
+void init_dog(struct dog *, char *, float, char *);
 #endif
