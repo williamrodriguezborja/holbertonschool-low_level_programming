@@ -21,9 +21,8 @@ char *str_copy(char *name)
 		return (NULL);
 
 	for (; i < len; i++)
-	{
 		copy[i] = name[i];
-	}
+
 	copy[i] = '\0';
 	return (copy);
 }
@@ -45,12 +44,12 @@ dog_t *new_dog(char *name, float age, char *owner)
 	new_dog->age = age;
 	new_dog->name = str_copy(name);
 
-	if (new_dog->name)
+	if (!new_dog->name)
 		return (NULL);
 
 	new_dog->owner = str_copy(owner);
 
-	if (new_dog->owner)
+	if (!new_dog->owner)
 	{
 		free(new_dog->owner);
 		free(new_dog);
