@@ -14,7 +14,8 @@ int valid_operator(char *c)
 
 	for (; c[i] && i < 1; i++)
 	{
-		if (c[i] == '*' || c[i] == '/' || c[i] == '+' || c[i] ==  '-')
+		if (c[i] == '*' || c[i] == '/' || c[i] == '+' ||
+		 c[i] ==  '-' || c[i] == '%')
 			return (1);
 	}
 	return (0);
@@ -74,6 +75,6 @@ int main(int argc, char *argv[])
 	func = get_op_func(operator);
 	result = func(num1, num2);
 
-	printf("Result: %d\n", result);
+	printf("%d\n", result);
 	return (EXIT_SUCCESS);
 }
