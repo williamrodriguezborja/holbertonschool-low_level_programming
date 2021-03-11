@@ -22,18 +22,20 @@ int main(int argc, char *argv[])
 	num2 = atoi(argv[3]);
 	operator = argv[2];
 
-	if (!num2 && (*operator == '/'  || *operator == '%'))
-	{
-		printf("Error\n");
-		exit(100);
-	}
-
 	func = get_op_func(operator);
 	if (!func)
 	{
 		printf("Error\n");
 		exit(99);
 	}
+
+	if (!num2 && (*operator == '/'  || *operator == '%'))
+	{
+		printf("Error\n");
+		exit(100);
+	}
+
+
 	result = func(num1, num2);
 	printf("%d\n", result);
 	return (EXIT_SUCCESS);
