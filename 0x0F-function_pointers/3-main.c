@@ -9,7 +9,7 @@
 */
 int main(int argc, char *argv[])
 {
-	int num1, num2, result;
+	int num1, num2, result = 0;
 	int (*func)(int, int);
 	char *operator;
 
