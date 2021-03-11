@@ -17,32 +17,19 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		exit(98);
 	}
-	for (i = 1; argv[1][i]; i++)
-		if (!(argv[1][i] >= 48 && argv[1][i] <= 57))
-		{
-			printf("Error\n");
-			exit(99);
-		}
 	num1 = atoi(argv[1]);
 	operator = argv[2];
 
-	for (; operator[i] && i < 1; i++)
+	for (i = 0; operator[i] && i < 1; i++)
 	{
-		if (operator[i] != '*' || operator[i] != '/' || operator[i] != '+' ||
-			operator[i] != '-' ||
-			operator[i] != '%')
+		if (operator[i] != '*' && operator[i] != '/' &&
+		operator[i] != '+' && operator[i] != '-' &&	operator[i] != '%')
 		{
 			printf("Error\n");
 			exit(99);
 		}
 	}
 
-	for (i = 0; argv[3][i]; i++)
-		if (!(argv[3][i] >= 48 && argv[3][i] <= 57))
-		{
-			printf("Error\n");
-			exit(99);
-		}
 	num2 = atoi(argv[3]);
 	func = get_op_func(operator);
 	result = func(num1, num2);
