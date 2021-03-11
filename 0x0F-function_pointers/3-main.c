@@ -2,6 +2,8 @@
 #include <stdlib.h>
 /**
 * main - calculator
+* @argc: arguments counter
+* @argv: argumetns values
 * Return: Success
 */
 int main(int argc, char *argv[])
@@ -24,7 +26,6 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		exit(99);
 	}
-
 	result = func(num1, num2);
 	printf("%d\n", result);
 	return (EXIT_SUCCESS);
