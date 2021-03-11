@@ -17,8 +17,6 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		exit(98);
 	}
-
-	/* transform to integer */
 	for (i = 1; argv[1][i]; i++)
 		if (!(argv[1][i] >= 48 && argv[1][i] <= 57))
 		{
@@ -26,10 +24,9 @@ int main(int argc, char *argv[])
 			exit(99);
 		}
 	num1 = atoi(argv[1]);
+	operator = argv[2];
 
-	operator= argv[2];
-
-	for (; operator[i] && i<1; i++)
+	for (; operator[i] && i < 1; i++)
 	{
 		if (operator[i] != '*' || operator[i] != '/' || operator[i] != '+' ||
 			operator[i] != '-' ||
@@ -47,11 +44,8 @@ int main(int argc, char *argv[])
 			exit(99);
 		}
 	num2 = atoi(argv[3]);
-	/* edge case  operator invalid */
-
 	func = get_op_func(operator);
 	result = func(num1, num2);
-
 	printf("%d\n", result);
 	return (EXIT_SUCCESS);
 }
