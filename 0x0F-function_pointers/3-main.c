@@ -22,7 +22,7 @@ int main(int argc, char *argv[])
 	num2 = atoi(argv[3]);
 	operator = argv[2];
 
-	if (!num2 && (*operator == '\\'  || *operator == '%') )
+	if (!num2 && (*operator == '/'  || *operator == '%') )
 	{
 		printf("Error\n");
 		exit(100);
