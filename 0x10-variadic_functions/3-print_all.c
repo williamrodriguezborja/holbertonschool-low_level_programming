@@ -35,8 +35,12 @@ void print_all(const char *const format, ...)
 			printf("%s", str_value ? str_value : "(nil)");
 			break;
 		default:
+			i++;
+			continue;
 			break;
 		}
+		if (format[i + 1])
+			printf(", ");
 		i++;
 	}
 	va_end(args);
