@@ -7,6 +7,7 @@
 */
 int main(void)
 {
-	print_all("cis", '\0', 25, NULL);
+	print_all("cfs", '\0', 25, "ire");
+	print_all("cis", 'F', -25, "ire");
 	return (0);
 }

@@ -20,11 +20,6 @@ void print_all(const char *const format, ...)
 		switch (format[i])
 		{
 		case 'c':
-			if (!va_arg(args, int))
-			{
-				i++;
-				continue;
-			}
 			printf("%c", va_arg(args, int));
 			break;
 		case 'f':
