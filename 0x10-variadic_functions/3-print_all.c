@@ -7,14 +7,12 @@
  */
 void print_all(const char *const format, ...)
 {
-	va_list args;
+	va_list(args);
 	char *str_value;
 	int i = 0;
-	/*edge case */
 
 	if (!format)
 		return;
-
 	va_start(args, format);
 
 	while (format[i])
@@ -22,6 +20,11 @@ void print_all(const char *const format, ...)
 		switch (format[i])
 		{
 		case 'c':
+			if (!va_arg(args, int))
+			{
+				i++;
+				continue;
+			}
 			printf("%c", va_arg(args, int));
 			break;
 		case 'f':
