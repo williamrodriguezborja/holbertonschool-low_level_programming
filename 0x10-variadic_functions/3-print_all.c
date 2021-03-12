@@ -8,6 +8,7 @@
 void print_all(const char *const format, ...)
 {
 	va_list args;
+	char *str_value;
 	int i = 0;
 	/*edge case */
 
@@ -30,8 +31,8 @@ void print_all(const char *const format, ...)
 			printf("%d", va_arg(args, int));
 			break;
 		case 's':
-			char *value = va_arg(args, char *);
-			printf("%s", value ? value : "(nil)");
+			str_value = va_arg(args, char *);
+			printf("%s", str_value ? str_value : "(nil)");
 			break;
 		default:
 			break;
