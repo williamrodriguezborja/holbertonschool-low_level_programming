@@ -12,7 +12,11 @@ void print_all(const char *const format, ...)
 	int i = 0;
 
 	if (!format)
+	{
+		printf("\n");
 		return;
+	}
+
 
 	va_start(args, format);
 
