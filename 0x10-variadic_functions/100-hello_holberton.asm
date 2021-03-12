@@ -1,6 +1,6 @@
 section	.rodata
 ; db = initialize value;
-msg db 'Hello, Holberton!',\u263a ;string to be printed
+msg db `Hello, Holberton!`,10 ;string to be printed
 ;  equ = create constant $ = expresion - = length  = msg
 len equ $ - msg
 
