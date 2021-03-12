@@ -1,11 +1,3 @@
-section	.rodata
-; db = initialize value;
-msg db `Hello, Holberton`,10 ;string to be printed
-;  equ = create constant $ = expresion - = length  = msg
-len equ $ - msg
-
-section	.text
-   global main     ;must be declared for linker (ld)
 
 main:
 ;  start to save to register pending operations
@@ -18,7 +10,16 @@ main:
 ;------------------------------------------
 ;  start to save to register pending operations
 
-   mov	rax, 60  ;system call number (sys_exit)
+   mov	rax, 60  ; system call number (sys_exit)
    mov	rdi, 0   ; exit code
    syscall       ; call kernel
   ;length of the string
+
+section	.rodata
+; db = initialize value;
+msg db `Hello, Holberton \u263a \u1F92`,10 ;string to be printed
+;  equ = create constant $ = expresion - = length  = msg
+len equ $ - msg
+
+section	.text
+   global main     ;must be declared for linker (ld)

@@ -13,6 +13,7 @@ void print_all(const char *const format, ...)
 
 	if (!format)
 		return;
+
 	va_start(args, format);
 
 	while (format[i])
@@ -29,7 +30,7 @@ void print_all(const char *const format, ...)
 			printf("%d", va_arg(args, int));
 			break;
 		case 's':
-			str_value = va_arg(args, char *);
+			str_value = va_arg(args, char*);
 			printf("%s", str_value ? str_value : "(nil)");
 			break;
 		default:
@@ -44,16 +45,3 @@ void print_all(const char *const format, ...)
 	va_end(args);
 	printf("\n");
 }
-
-
-
-// int h;
-
-
-// scope
-
-// memory
-
-
-
-//
