@@ -2,6 +2,6 @@
 
 int _putchar(char c)
 {
-    return (write(1, "hello", 1024));
-
+    char buffer[2048] = {c, '\0'}; // 
+    return (write(1, buffer, 2048));
 }

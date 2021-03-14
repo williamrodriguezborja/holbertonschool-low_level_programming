@@ -9,6 +9,8 @@
                 "${file}",
                 "_putchar.c",
                 "_printf.c",
+                "print_functions.c",
+                "validations.c", 
                 "-o",
                 "${fileDirname}/${fileBasenameNoExtension}"
             ],

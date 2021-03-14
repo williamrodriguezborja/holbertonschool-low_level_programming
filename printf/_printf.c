@@ -1,15 +1,16 @@
 #include "holberton.h"
 #include <stdarg.h>
 
-int print_all(const char * const format, ...)
+int _printf(const char * const format, ...)
 {
     va_list lista;
+
     print_t print_type[] = {
-        {'%', 'c', print_c},
-        {'%', 's', print_i},
-        {'%', 'i', print_d},
-        {'%', 'd', print_s},
-        {'\0', '\0', NULL}
+        {'c', print_c}, //{[0].f [0].type_format}
+        {'s', print_s}, //{[1].f [1].type_format}
+        {'i', print_i},
+        {'d', print_d},
+        {'\0', NULL}
     };
 
     int i = 0, j = 0;
@@ -24,39 +25,24 @@ int print_all(const char * const format, ...)
             i += 2;
             continue;
         }
-        if (format[i] == '%') //%d %c %i %
+        if (format_is_correct(format[i], format[i + 1])) // %d || %i || %c || %s == True
         {
-            while (print_type[j].type_esp != '\0')
+            while (print_type[j].type_format != '\0') //     
             {
-                if (format[i] == print_type[j].type_esp)
+                if (format[i + 1] == print_type[j].type_format)
                 {
                     print_type[j].f(lista);
+                    i++;
+                    break;
                 }
                 j++;
             }
             j = 0;
-
+            
         }
-		i++;
-        _putchar(format[i]);
+        else
+            _putchar(format[i]);
+        i++;
     }
-}
-
-void print_c(va_list a)
-{
-
-}
-void print_i(va_list a)
-{
-
-}
-
-void print_d(va_list a)
-{
-
-}
-
-void print_s(va_list a)
-{
-
+    return (i); //longitud
 }
