@@ -32,6 +32,12 @@ void print_s(va_list a)
     int i;
     char * string = va_arg(a, char *);
 
+    if (string == NULL)
+    {
+        string = "(null)";
+    }
+     
+
     for (i = 0; string[i] != '\0' ; i++)
     {
         _putchar(string[i]);

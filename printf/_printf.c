@@ -40,9 +40,22 @@ int _printf(const char * const format, ...)
             j = 0;
             
         }
+        else if (format[i] == '%')
+        {
+            _putchar(format[i]); //
+
+            if ((int)format[i + 1]  == '\n')
+            {
+                _putchar(format[i + 1]); //
+                i += 2;
+
+            }else
+                i++;
+            continue;
+        }
         else
             _putchar(format[i]);
         i++;
     }
-    return (i); //longitud
+    return (i - 1); //longitud
 }
