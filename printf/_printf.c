@@ -13,7 +13,7 @@ int _printf(const char * const format, ...)
         {'\0', NULL}
     };
 
-    int i = 0, j = 0;
+    int i = 0, j = 0, count = 0;
 
     va_start(lista, format);
 
@@ -23,22 +23,23 @@ int _printf(const char * const format, ...)
         {
             _putchar(format[i]);
             i += 2;
+            count++;
             continue;
         }
-        if (format_is_correct(format[i], format[i + 1])) // %d || %i || %c || %s == True
+        if (format_is_correct(format[i], format[i + 1])) // %d  %i  %c || %s == True
         {
-            while (print_type[j].type_format != '\0') //     
+            while (print_type[j].type_format != '\0') //
             {
                 if (format[i + 1] == print_type[j].type_format)
                 {
                     print_type[j].f(lista);
                     i++;
+                    //count++;
                     break;
                 }
                 j++;
             }
             j = 0;
-            
         }
         else if (format[i] == '%')
         {
@@ -54,8 +55,12 @@ int _printf(const char * const format, ...)
             continue;
         }
         else
+        {
             _putchar(format[i]);
-        i++;
+        }
+        count++;
+        i++; //
     }
-    return (i - 1); //longitud
+
+    return (count); //longitud
 }

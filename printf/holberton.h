@@ -6,7 +6,6 @@
 int _putchar(char c);
 int _printf(const char *format, ...);
 
-
 typedef struct lista
 {
     char type_format;
@@ -18,7 +17,6 @@ void print_i(va_list a);
 void print_d(va_list a);
 void print_s(va_list a);
 int format_is_correct(char format, char type);
-
-
+void print_number(int n);
 
 #endif
