@@ -1,35 +1,28 @@
 #include "../../holberton.h"
-#include "../test.h"
 
-int main(void)
+int test_char(void)
 {
-    int length_expec = 0 , length_now = 0, is_correct;
-    separator_ln();
-    printf("||   Name of the Test: \033[34m %s\033[39m\n", "Test One Char");
-    separator_ln();
+ //   hello();
 
-    printf("|| * Expected:\n||\tOutput: ");
-    length_expec = printf("%c", 'a');
-    printf("\n");
-    printf("||\tlength: %d\n", length_expec);
+    int len_expect = 0, len_actual = 0;
+    int len_expect = printf("%c\n", 'a');
+    int len_actual = _printf("%c\n", 'a');
 
-    separator_ln();
+    int len_expect = printf("%cc\n", 'a');
+    int len_actual = _printf("%cc\n", 'a');
 
-    printf("||* Actual:\n");
-    printf("||\tOutput:\t");
-    length_now = printf("%c", 'a');
+    int len_expect = printf("%c\n", 'a');
+    int len_actual = _printf("%c\n", 'a');
 
-    printf("\n");
-    printf("||\tlength: %d\n", length_now);
+    int len_expect = printf("%c\n", 53);
+    int len_actual = _printf("%c\n", 53);
 
-    is_correct = length_expec == length_now;
-    separator_ln();
-    if (is_correct)
-        printf("||\033[32m\tTest Ok \033[39m\n");
-    else
-        printf("||\033[31m\tTest Failure\033[39m\n");
-    separator_ln();
-    printf("\n\n\n");
-    
-    return (is_correct);
+    int len_expect = printf("%c\n", '\0');
+    int len_actual = _printf("%c\n", '\0');
+
+    int len_expect = printf("%%%c\n", 'y');
+    int len_actual = _printf("%%%c\n", 'y');
+
+    int len_expect = printf("%");
+    int len_actual = _printf("%");
 }
