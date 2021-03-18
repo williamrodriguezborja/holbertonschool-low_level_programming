@@ -1,10 +1,10 @@
 #include <stdarg.h>
 #include <stdio.h>
 /**
- * print_all - this is a variadic c function that receive format and
- *             print this elements in stdout
- * @format: Pointers chars to print elements
- */
+* print_all - this is a variadic c function that receive format and
+*             print this elements in stdout
+* @format: Pointers chars to print elements
+*/
 void print_all(const char *const format, ...)
 {
 	va_list(args);

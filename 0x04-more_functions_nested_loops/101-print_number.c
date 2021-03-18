@@ -9,7 +9,6 @@ void print_number(int n)
 {
 	unsigned int tmp, tens = 1;
 
-
 	if (n < 0)
 	{
 		n = -n;
