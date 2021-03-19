@@ -1,5 +1,5 @@
-.global main
-	.text
+	global main
+	extern printf
 format:	 .ascii "Hello, Holberton\10"
 
 main:
