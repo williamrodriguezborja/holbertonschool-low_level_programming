@@ -1,4 +1,4 @@
-
+	extern printf
 format:	 db "Hello, Holberton",10
 
 main:
