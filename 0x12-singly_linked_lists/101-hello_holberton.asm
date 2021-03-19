@@ -1,4 +1,4 @@
-	.global main
+.global main
 	.text
 format:	 .ascii "Hello, Holberton\10"
 
