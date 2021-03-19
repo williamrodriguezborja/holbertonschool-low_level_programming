@@ -5,13 +5,14 @@
  * add_node - this function attach node in a linked list
  * @head: start of linked list
  * @str: string to store in new node
+ * Return: new node
  */
 list_t *add_node(list_t **head, const char *str)
 {
-	list_t *node, tmp;
+	list_t *node;
 	int len;
 
-	node = malloc(sizeof(list_t*));
+	node = malloc(sizeof(list_t *));
 
 	if (!node)
 		return (NULL);
@@ -26,10 +27,8 @@ list_t *add_node(list_t **head, const char *str)
 		*head = node;
 	else
 	{
-		tmp = **head;
-		node->next = &tmp;
+		node->next = *head;
 		*head = node;
 	}
-
 	return (node);
 }

@@ -15,19 +15,20 @@ list_t *last_node(list_t *h)
 	if (!h->next)
 		return (h);
 
-	return last_node(h->next);
+	return (last_node(h->next));
 }
 /**
- * add_node - this function attach node in a linked list
+ * add_node_end - this function attach node in a linked list in the end
  * @head: start of linked list
  * @str: string to store in new node
+ * Return: New node
  */
 list_t *add_node_end(list_t **head, const char *str)
 {
 	list_t *node, *last;
 	int len;
 
-	node = malloc(sizeof(list_t*));
+	node = malloc(sizeof(list_t *));
 
 	if (!node)
 		return (NULL);
