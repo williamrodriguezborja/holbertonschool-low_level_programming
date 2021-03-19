@@ -1,8 +1,9 @@
-	extern printf
-format:	 db "Hello, Holberton",10
+	.global main
+	.text
+format:	 .ascii "Hello, Holberton\10"
 
 main:
-	mov rdi, format
+	push $format
 	call printf
 
 	mov rax, 60
