@@ -4,6 +4,7 @@
 /*std libs */
 
 #include <stddef.h>
+#include <stdlib.h>
 /*----------------- structs  */
 /**
  * struct listint_s - singly linked list
@@ -28,4 +29,5 @@ listint_t *add_nodeint(listint_t **, const int);
 listint_t *add_nodeint_end(listint_t **, const int);
 void free_listint(listint_t *);
 void free_listint2(listint_t **);
+int pop_listint(listint_t **);
 #endif
