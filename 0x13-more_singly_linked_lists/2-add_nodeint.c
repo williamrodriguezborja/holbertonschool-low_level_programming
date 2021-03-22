@@ -16,6 +16,7 @@ listint_t *add_nodeint(listint_t **head, const int n)
 	if (!node)
 		return (NULL);
 	node->n = n;
+	node->next = NULL;
 	if (!*head) /* edge base */
 		*head = node;
 	else

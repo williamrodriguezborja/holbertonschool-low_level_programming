@@ -31,6 +31,7 @@ listint_t *add_nodeint_end(listint_t **head, const int n)
 	if (!node) /*validate succesful node*/
 		return (NULL);
 	node->n = n;  /*add data to node*/
+	node->next = NULL;
 
 	if (!*head) /* edge base */
 	{

@@ -12,9 +12,10 @@ size_t print_listint(const listint_t *h)
 	if (!h) /* edge base */
 		return (0);
 	/* normal case */
+
 	printf("%d\n", h->n);
 
-	if (!h->next) /* case base  end list*/
+	if (h->next == NULL) /* case base  end list*/
 		return (1);
 	return (1 + print_listint(h->next));
 }
