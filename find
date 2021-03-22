@@ -1,0 +1,1 @@
+grep "__attribute__" --before-context=10 --after-context=10 $(find . -type f -name "*.c")
