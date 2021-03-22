@@ -1,8 +1,7 @@
 #ifndef LISTS_H
 #define LISTS_H
 
-/*                   structs                    */
-
+/*----------------- structs  */
 /**
  * struct listint_s - singly linked list
  * @n: integer
@@ -18,8 +17,9 @@ typedef struct listint_s
 } listint_t;
 
 
-/*                 prototypes                  */
 
+/* ------------------ prototypes          */
 size_t print_listint(const listint_t *);
+size_t listint_len(const listint_t *);
 
 #endif
