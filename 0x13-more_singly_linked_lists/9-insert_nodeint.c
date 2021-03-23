@@ -12,23 +12,21 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	size_t i;
 	listint_t *node, *tmp, *before, *index_node;
 
-	if (!head || !*head) /*edge cases*/
+	if (!head || !*head)
 		return (NULL);
 
-	node = malloc(sizeof(listint_t)); /*create node*/
-
-	if (!node) /*malloc edge case*/
+	node = malloc(sizeof(listint_t));
+	if (!node)
 		return (NULL);
 
-	node->n = n; /* fill data */
+	node->n = n;
 
-	tmp = *head; /*iterate list with tmp and for*/
-	for (i = 0 ; i < idx - 1 && tmp->next; i++) /* search node index -1  */
+	tmp = *head;
+	for (i = 0 ; i < idx - 1 && tmp->next; i++)
 		tmp = tmp->next;
 
-	/*  before_node ->  new_node  ->   index_node        */
-	/*  tmp         ->  node      ->   tmp->next->next   */
-	index_node = tmp->next->next;
+	index_node = tmp->next;
+
 	before = tmp;
 
 	before->next = node;
