@@ -5,6 +5,7 @@
 
 #include <stddef.h>
 #include <stdlib.h>
+#include <stdio.h>
 /*----------------- structs  */
 /**
  * struct listint_s - singly linked list
@@ -37,6 +38,7 @@ int delete_nodeint_at_index(listint_t **, unsigned int);
 
 /*         advanced */
 listint_t *reverse_listint(listint_t **);
+size_t print_listint_safe(const listint_t*);
 listint_t *find_listint_loop(listint_t *);
 
 #endif
