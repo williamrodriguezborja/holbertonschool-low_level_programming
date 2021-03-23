@@ -2,18 +2,24 @@
 
 /**
  * reverse_listint - reverse linked list
- * @head
+ * @head: linked list
  * Return: reversed list
  */
 listint_t *reverse_listint(listint_t **head)
 {
-	listint_t *tmp = NULL;
+	listint_t  *prev = NULL, *next = NULL;
 
-	if (!head || !*head) /* edge case */
+	if (!head || !*head)
 		return (NULL);
-	/* base case */
-	if (!(*head)->next)
-		return head;
-	 tmp= reverse_listint(&(*head));
-	 return (*head);
+
+	while ((*head)->next) /* current = *head; */
+	{
+		next = (*head)->next;
+		(*head)->next = prev;/* current->next = prev; */
+		prev = *head;
+		*head = next;/* current = next; */
+	}
+
+	(*head)->next = prev;
+	return (*head);
 }
