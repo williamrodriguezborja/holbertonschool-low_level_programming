@@ -15,6 +15,7 @@ int main(void)
 	listint_t *node;
 
 	head2 = NULL;
+	add_nodeint(&head2, 12);
 	add_nodeint(&head2, 0);
 	add_nodeint(&head2, 1);
 	add_nodeint(&head2, 2);
@@ -31,6 +32,7 @@ int main(void)
 	add_nodeint(&head, 2);
 	add_nodeint(&head, 3);
 	add_nodeint(&head, 4);
+	add_nodeint(&head, 5);
 	node->next = add_nodeint(&head, 98);
 	add_nodeint(&head, 402);
 	add_nodeint(&head, 1024);
