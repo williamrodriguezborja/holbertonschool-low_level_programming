@@ -20,11 +20,11 @@ size_t print_listint_safe(const listint_t *head)
 	{
 		if (!fast || !fast->next)
 		{
-			while (slow)
-			{
-				printf("[%p] %d\n", (void *)slow, slow->n);
-				slow = slow->next;
-			}
+			/* while (slow) */
+			/* { */
+			/* 	printf("[%p] %d\n", (void *)slow, slow->n); */
+			/* 	slow = slow->next; */
+			/* } */
 			break;
 		}
 		printf("[%p] %d\n", (void *)slow, slow->n);
