@@ -59,17 +59,15 @@ size_t print_listint_safe(const listint_t *head)
 				fast = fast->next;
 				size++;
 			}
+			printf("-> [%p] %d\n", (void *)slow, slow->n);
 			free_cycle(head, size - 1);
 			head = NULL;
-			printf("size [%ld]\n", size);
 			exit(98);
 		}
 		size++;
 	}
-
 	free_cycle(head, size);
 	head = NULL;
 	size--;
-	printf("size [%ld]", size);
 	return (size);
 }
