@@ -1,15 +1,18 @@
 #include "lists.h"
 
 
-void free_cycle(const listint_t *head)
+void free_cycle(const listint_t *head, size_t size)
 {
-	listint_t *tmp;
-	while (head)
+	const listint_t *tmp;
+
+	tmp = head;
+
+	while (size + 1)
 	{
 		tmp = head->next;
 		free((listint_t *)head);
-		head = NULL;
 		head = tmp;
+		size--;
 	}
 }
 
@@ -57,16 +60,13 @@ size_t print_listint_safe(const listint_t *head)
 			}
 
 			printf("size: %ld\n", size);
-
-			while ((size--) + 1)
-			{
-				slow = fast->next;
-				free((listint_t *)fast);
-				fast = slow;
-			}
+			free_cycle(head, --size);
+			head = NULL;
 			exit(98);
 		}
 		size++;
 	}
+	free_cycle(head, size);
+	head = NULL;
 	return (size);
 }
