@@ -7,7 +7,7 @@ void free_cycle(const listint_t *head, size_t size)
 
 	tmp = head;
 
-	while (size + 1)
+	while (size)
 	{
 		tmp = head->next;
 		free((listint_t *)head);
@@ -57,16 +57,19 @@ size_t print_listint_safe(const listint_t *head)
 				free((listint_t *)head);
 				head = slow;
 				fast = fast->next;
+				size++;
 			}
-
-			printf("size: %ld\n", size);
-			free_cycle(head, --size);
+			free_cycle(head, size - 1);
 			head = NULL;
+			printf("size [%ld]\n", size);
 			exit(98);
 		}
 		size++;
 	}
+
 	free_cycle(head, size);
 	head = NULL;
+	size--;
+	printf("size [%ld]", size);
 	return (size);
 }
