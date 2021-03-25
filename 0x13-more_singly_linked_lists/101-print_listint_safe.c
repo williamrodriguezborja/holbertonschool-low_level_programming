@@ -67,7 +67,6 @@ size_t print_listint_safe(const listint_t *head)
 		}
 		printf("[%p] %d\n", (void *)to_print, to_print->n);
 	}
-	printf("[%ld]", size);
 	free_cycle(head, size);
 	head = NULL;
 	return (size);
