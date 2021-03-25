@@ -29,5 +29,22 @@ int main(void)
 	node = add_nodeint(&head, 6);
 	node->next = add_nodeint(&head, 9);
 	print_listint_safe(head);
+
+	head = NULL;
+	printf("------------------\n");
+	node = add_nodeint(&head, 9);
+	node->next = node;
+	print_listint_safe(head);
+	printf("------------------\n");
+	head = NULL;
+	node = add_nodeint(&head, 0);
+	add_nodeint(&head, 1);
+	add_nodeint(&head, 2);
+	add_nodeint(&head, 3);
+	add_nodeint(&head, 4);
+	node->next = add_nodeint(&head, 98);
+	add_nodeint(&head, 402);
+	add_nodeint(&head, 1024);
+	print_listint_safe(head);
 	return (0);
 }
