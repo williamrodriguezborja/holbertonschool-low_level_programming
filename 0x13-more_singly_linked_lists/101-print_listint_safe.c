@@ -1,18 +1,19 @@
 #include "lists.h"
-
-
+/**
+ * free_cycle - free linked list
+  * @head: linked list
+ * @size: size
+ */
 void free_cycle(const listint_t *head, size_t size)
 {
 	const listint_t *tmp;
 
 	tmp = head;
-
-	while (size)
+	while (size--)
 	{
 		tmp = head->next;
 		free((listint_t *)head);
 		head = tmp;
-		size--;
 	}
 }
 
@@ -24,50 +25,37 @@ void free_cycle(const listint_t *head, size_t size)
 size_t print_listint_safe(const listint_t *head)
 {
 	size_t size;
-	const listint_t *slow, *fast;
+	int is_cycle = 0, stop = 1;
+	const listint_t *slow, *fast, *to_print;
 
 	if (!head)
 		exit(98);
-	slow = head;
-	fast = head;
-	size = 0;
+	slow = head, fast = head, size = 0;
 
-	while (slow->next)
+	for (; stop; size++)
 	{
-		if (!fast || !fast->next)
-		{
-			while (slow)
-			{
-				printf("[%p] %d\n", (void *)slow, slow->n);
-				slow = slow->next;
-				size++;
-			}
-			break;
-		}
-		printf("[%p] %d\n", (void *)slow, slow->n);
+		to_print = slow;
 		slow = slow->next;
-		fast = fast->next->next;
-		if (slow == fast)
+		if (fast && fast->next && !is_cycle)
+			fast = fast->next->next;
+		if (is_cycle)
 		{
-			slow = head;
-			while (slow != fast)
-			{
-				slow = slow->next;
-				printf("[%p] %d\n", (void *)fast, fast->n);
-				free((listint_t *)head);
-				head = slow;
-				fast = fast->next;
-				size++;
-			}
-			printf("-> [%p] %d\n", (void *)slow, slow->n);
-			free_cycle(head, size - 1);
-			head = NULL;
-			exit(98);
+			to_print = fast;
+			fast = fast->next;
+			stop = slow != fast;
 		}
-		size++;
+		else if (!fast || !fast->next)
+			stop = slow != NULL;
+		else if (slow == fast)
+			slow = head, is_cycle = 1;
+
+		printf("[%p] %d\n", (void *)to_print, to_print->n);
+		if (!stop && is_cycle)
+			printf("-> [%p] %d\n", (void *)slow, slow->n);
 	}
 	free_cycle(head, size);
 	head = NULL;
-	size--;
+	if (is_cycle)
+		exit(98);
 	return (size);
 }
