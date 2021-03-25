@@ -26,8 +26,8 @@ int main(void)
 	print_listint_safe(head2);
 	head = NULL;
 	printf("------------------\n");
-	node = add_nodeint(&head, 6);
-	node->next = add_nodeint(&head, 9);
+	node = add_nodeint(&head, 9);
+	node->next = add_nodeint(&head, 6);
 	print_listint_safe(head);
 	return (0);
 }
