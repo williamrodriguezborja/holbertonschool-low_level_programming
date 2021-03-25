@@ -7,40 +7,42 @@
 size_t print_listint_safe(const listint_t *head)
 {
 	size_t size;
-	int is_cycle = 0, stop = 1;
-	const listint_t *slow, *fast, *to_print;
+	const listint_t *slow, *fast;
 
 	if (!head)
 		exit(98);
-	slow = head, fast = head, size = 0, to_print = NULL;
-	for (; stop; size++)
+
+	slow = head, fast = head, size = 0;
+	for (; slow->next; size++)
 	{
-		to_print = slow;
+		printf("[%p] %d\n", (void *)slow, slow->n);
 		slow = slow->next;
-		if (fast && fast->next && !is_cycle && fast != fast->next)
-			fast = fast->next->next;
-		if (!fast || !fast->next)
-			stop = slow != NULL;
-		else if (slow == fast)
+		fast = fast->next->next;
+
+		if (slow == fast)
 		{
-			slow = head, is_cycle = 1;
+			slow = head;
 			if (slow == fast)
 				fast = fast->next;
 
-			if (size++ <= 1)
-			{
-				printf("[%p] %d\n", (void *)fast, fast->n);
-				printf("-> [%p] %d\n",  (void *)slow, slow->n);
-			}
 			while (slow != fast && size > 2)
 			{
 				slow = slow->next;
 				printf("[%p] %d\n", (void *)fast, fast->n);
 				fast = fast->next;
 			}
+			printf("-> [%p] %d\n", (void *)slow, slow->n);
 			break;
 		}
-		printf("[%p] %d\n", (void *)to_print, to_print->n);
+
+		if (!fast || !fast->next)
+		{
+			for (; slow; slow = slow->next)
+			{
+				printf("[%p] %d\n", (void *)slow, slow->n);
+			}
+			break;
+		}
 	}
 	return (size);
 }
