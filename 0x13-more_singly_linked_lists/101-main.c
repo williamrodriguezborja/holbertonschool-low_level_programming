@@ -24,10 +24,17 @@ int main(void)
 	add_nodeint(&head2, 402);
 	add_nodeint(&head2, 1024);
 	print_listint_safe(head2);
+
 	head = NULL;
 	printf("------------------\n");
-	node = add_nodeint(&head, 9);
-	node->next = add_nodeint(&head, 6);
+	node =  add_nodeint(&head, 9);
+	node->next = node;
+	print_listint_safe(head);
+
+	head = NULL;
+	printf("------------------\n");
+	node =  add_nodeint(&head, 9);
+	node->next =add_nodeint(&head, 6);
 	print_listint_safe(head);
 	return (0);
 }
