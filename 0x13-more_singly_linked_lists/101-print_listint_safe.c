@@ -30,7 +30,7 @@ size_t print_listint_safe(const listint_t *head)
 
 	if (!head)
 		exit(98);
-	slow = head, fast = head, size = 0;
+	slow = head, fast = head, size = 1;
 
 	for (; stop; size++)
 	{
@@ -53,7 +53,7 @@ size_t print_listint_safe(const listint_t *head)
 		if (!stop && is_cycle)
 			printf("-> [%p] %d\n", (void *)slow, slow->n);
 	}
-	free_cycle(head, size);
+	free_cycle(head, size - 1);
 	head = NULL;
 	if (is_cycle)
 		exit(98);
