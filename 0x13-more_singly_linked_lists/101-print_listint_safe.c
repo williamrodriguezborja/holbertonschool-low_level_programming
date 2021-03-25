@@ -36,29 +36,36 @@ size_t print_listint_safe(const listint_t *head)
 	{
 		to_print = slow;
 		slow = slow->next;
-		if (fast && fast->next && !is_cycle)
+		if (fast && fast->next && !is_cycle && fast != fast->next)
 			fast = fast->next->next;
-		if (is_cycle)
-		{
-			to_print = fast;
-			fast = fast->next;
-			stop = slow != fast;
-		}
-		else if (!fast || !fast->next)
+		if (!fast || !fast->next)
 			stop = slow != NULL;
 		else if (slow == fast)
 		{
 			slow = head, is_cycle = 1;
-			if (size < 2)
+
+			if (slow == fast)
 			{
-				size--;
-				continue;
+				fast = fast->next;
+				printf("[%p] %d\n-> [%p] %d\n", (void *)fast, fast->n, (void *)slow, slow->n);
+				size++;
+				break;
 			}
+				
+			while (slow != fast)
+			{
+				slow = slow->next;
+				printf("[%p] %d\n", (void *)fast, fast->n);
+				fast = fast->next;
+			}
+			if (size++ < 1)
+			{
+				printf("[%p] %d\n-> [%p] %d\n", (void *)fast, fast->n, (void *)fast, fast->n);
+			}
+				
+			break;
 		}
-		if (!stop && is_cycle)
-			printf("[%p] %d\n-> [%p] %d\n", (void *)slow, slow->n, (void *)slow, slow->n);
-		else
-			printf("[%p] %d\n", (void *)to_print, to_print->n);
+		printf("[%p] %d\n", (void *)to_print, to_print->n);
 	}
 	printf("[%ld]", size);
 	free_cycle(head, size);
