@@ -10,7 +10,7 @@ size_t print_listint_safe(const listint_t *head)
 	const listint_t *slow, *fast;
 
 	if (!head)
-		exit(98);
+		return (0);
 
 	slow = head, fast = head, size = 0;
 	for (; slow->next; size++)
