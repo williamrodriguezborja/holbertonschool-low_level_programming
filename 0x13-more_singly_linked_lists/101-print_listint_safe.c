@@ -39,10 +39,9 @@ size_t print_listint_safe(const listint_t *head)
 
 		if (!fast || !fast->next)
 		{
-			for (; slow; slow = slow->next)
-			{
+			for (; slow; slow = slow->next, size++)
 				printf("[%p] %d\n", (void *)slow, slow->n);
-			}
+			size++;
 			break;
 		}
 	}
