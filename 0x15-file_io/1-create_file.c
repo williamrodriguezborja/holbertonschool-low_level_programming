@@ -20,11 +20,9 @@ int create_file(const char *filename, char *text_content)
 
 	for (size = 0; text_content[size]; size++)
 	{}
-	size = write(file_d, text_content, size);
-
-	if (size == -1)
+	if (write(file_d, text_content, size) == -1)
 		return (-1);
-		
+
 	close(file_d);
 	return (1); /*read funcition return ssize_t*/
 }
