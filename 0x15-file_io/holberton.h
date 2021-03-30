@@ -9,7 +9,7 @@
 
 
 /* constant values */
-
+#define BUFFER_SIZE 1024
 #define MSG_ERROR_97 "Usage: cp file_from file_to\n"
 #define MSG_ERROR_98 "Error: Can't read from file %s\n"
 #define MSG_ERROR_99 "Error: Can't write to %s\n"
