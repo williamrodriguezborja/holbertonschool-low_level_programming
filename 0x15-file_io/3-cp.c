@@ -27,13 +27,11 @@ void error(int exit_n, const char *filename, int fd)
  * @size: size
  * Return: size of chars
  */
-ssize_t read_text(int file_d, char *buffer, const char *filename, size_t size)
+ssize_t read_text(int file_d, char *buffer, const char *filename)
 {
 	ssize_t read_size;
-
 	if (file_d == -1)
 		error(98, filename, 0);
-
 	read_size = read(file_d, buffer, BUFFER_SIZE);
 	if (read_size == -1)
 		error(98, filename, 0);
@@ -46,11 +44,11 @@ ssize_t read_text(int file_d, char *buffer, const char *filename, size_t size)
  * @filename: filename
  * @size: size
  */
-void write_text(int file_d, char *buffer, const char *filename, size_t size)
+void write_text(int file_d, char *buffer, const char *filename, ssize_t size)
 {
 	if (file_d == -1 || !filename)
 		error(99, filename, 0);
-	if ((size = write(file_d, buffer, size)) == -1)
+	if ((write(file_d, buffer, size)) == -1)
 		error(99, filename, 0);
 }
 /**
@@ -72,7 +70,7 @@ int main(int argc, char const *argv[])
 	file_to = argv[2];
 	file_d_read = open(file_from, O_RDONLY);
 	file_d_write = open(file_to, O_TRUNC | O_CREAT | O_WRONLY, 0664);
-	while ((read_size = read_text(file_d_read, buffer, file_from, 1024)) != 0)
+	while ((read_size = read_text(file_d_read, buffer, file_from)) != 0)
 	{
 		if (read_size < 1024)
 			buffer[read_size + 1] = '\0';
