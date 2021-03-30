@@ -24,12 +24,12 @@ void error(int exit_n, const char *filename, int fd)
  * @file_d: file descriptor
  * @buffer: buffer
  * @filename: filename
- * @size: size
  * Return: size of chars
  */
 ssize_t read_text(int file_d, char *buffer, const char *filename)
 {
 	ssize_t read_size;
+
 	if (file_d == -1)
 		error(98, filename, 0);
 	read_size = read(file_d, buffer, BUFFER_SIZE);
@@ -69,7 +69,7 @@ int main(int argc, char const *argv[])
 	file_from = argv[1];
 	file_to = argv[2];
 	file_d_read = open(file_from, O_RDONLY);
-	file_d_write = open(file_to, O_TRUNC | O_CREAT | O_WRONLY, 0664);
+	file_d_write = open(file_to, O_TRUNC | O_CREAT | O_WRONLY, WRITE_READ);
 	while ((read_size = read_text(file_d_read, buffer, file_from)) != 0)
 	{
 		if (read_size < 1024)

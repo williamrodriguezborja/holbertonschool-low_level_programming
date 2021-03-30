@@ -14,6 +14,8 @@
 #define MSG_ERROR_98 "Error: Can't read from file %s\n"
 #define MSG_ERROR_99 "Error: Can't write to %s\n"
 #define MSG_ERROR_100 "Error: Can't close fd %d\n"
+#define WRITE_READ 0664
+
 
 /* prototypes*/
 ssize_t read_textfile(const char *filename, size_t letters);
