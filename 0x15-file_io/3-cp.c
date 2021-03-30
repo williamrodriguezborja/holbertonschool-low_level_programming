@@ -8,7 +8,7 @@
 int main(int argc, char const *argv[])
 {
 	int file_d;
-	const char *filename, *dest;
+	const char *from, *dest;
 	char buffer[1024];
 
 	if (argc != 3)
@@ -16,32 +16,28 @@ int main(int argc, char const *argv[])
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
-	filename = argv[1];
-	dest = argv[2];
-
-	file_d = open(filename, O_RDONLY);
-	if (file_d == -1)
+	from = argv[1], dest = argv[2];
+	file_d = open(from, O_RDONLY);
+	if (file_d == -1 || !from)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s", filename);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", from);
 		exit(98);
 	}
 	read(file_d, buffer, 1024);
 	file_d = open(dest, O_TRUNC | O_CREAT | O_WRONLY, S_IRUSR |
 	S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH);
-	if (file_d == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s", filename);
-		exit(98);
-	}
 	/* read file */
-
 	if (write(file_d, buffer, 1024) == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't write to %s", filename);
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", from);
 		exit(99);
 	}
 
+	if (close(file_d) == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_d);
+		exit(100);
+	}
 	dprintf(STDOUT_FILENO, "%s", buffer);
-	close(file_d);
 	return (0);
 }
