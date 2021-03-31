@@ -1,3 +1,4 @@
+
 main:
 ;  start to save to register pending operations
    mov	rax, 1   ; sys call to syswrite   write(1, text, len)
