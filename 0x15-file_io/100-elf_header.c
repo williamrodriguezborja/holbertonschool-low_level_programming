@@ -63,7 +63,7 @@
 		switch (header->e_ident[EI_OSABI])                \
 		{                                                 \
 		case ELFOSABI_NONE:                               \
-			printf(OS_ABI, "UNIX System V");          \
+			printf(OS_ABI, "UNIX - System V");          \
 			break;                                        \
 		case ELFOSABI_HPUX:                               \
 			printf(OS_ABI, "HP-UX ABI");                  \
