@@ -130,8 +130,9 @@
 
 int main(int argc, char const *argv[])
 {
-	int file_d, i;
+	int file_d, i,is_64;
 	char buffer[BUFFER_SIZE];
+	Elf32_Ehdr *header;
 
 	if (argc != 2)
 		EXIT_98;
@@ -143,8 +144,8 @@ int main(int argc, char const *argv[])
 	if (read(file_d, buffer, BUFFER_SIZE) == -1)
 		EXIT_98;
 
-	Elf32_Ehdr *header = (Elf32_Ehdr *)buffer;
-	int is_64 = (int)buffer[EI_CLASS] == ELFCLASS64;
+	header =  (Elf32_Ehdr *)buffer;
+	is_64 = (int)buffer[EI_CLASS] == ELFCLASS64;
 	PRINT_MAGIC(header);
 	PRINT_CLASS(is_64);
 	PRINT_DATA(header);
@@ -152,6 +153,6 @@ int main(int argc, char const *argv[])
 	PRINT_OSABI(header);
 	PRINT_ABIVERSION(header);
 	PRINT_TYPE(header);
-	printf("  Entry point address:               %x\n", (void *)(long)header->e_entry);
+	printf("  Entry point address:               %p\n", (void *)(long)header->e_entry);
 	return (0);
 }
