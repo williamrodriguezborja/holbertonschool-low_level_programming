@@ -97,7 +97,10 @@
 		}                                                 \
 	} while (0)
 #define PRINT_ABIVERSION(header) \
-	printf("  ABI Version:\t\t\t     %d\n", header->e_ident[EI_ABIVERSION])
+	do {\
+		printf("  ABI Version:         ");\
+		printf("              %d\n", header->e_ident[EI_ABIVERSION]);\
+	} while (0)
 
 #define PRINT_TYPE(header)                          \
 	do {                                               \
@@ -153,7 +156,7 @@ int main(int argc, char const *argv[])
 	PRINT_OSABI(header);
 	PRINT_ABIVERSION(header);
 	PRINT_TYPE(header);
-	printf("  Entry point address:\t\t     %p\n", (void *)(long)header->e_entry);
+	printf("  Entry point address:               %p", (void *)(long)header->e_entry);
 	close(file_d);
 	return (0);
 }
