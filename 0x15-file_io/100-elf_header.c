@@ -113,7 +113,7 @@
 			printf(TYPE, "EXEC (Executable file)"); \
 			break;                                  \
 		case ET_DYN:                                \
-			printf(TYPE, "DYN (Shared Object)");    \
+			printf(TYPE, "DYN (Shared object file)");    \
 			break;                                  \
 		case ET_CORE:                               \
 			printf(TYPE, "CORE (core file)");       \
