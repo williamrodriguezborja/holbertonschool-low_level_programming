@@ -122,7 +122,12 @@
 			break;                                  \
 		}                                           \
 	} while (0)
-
+/**
+ * main - read header elf
+ * @argc: count
+ * @argv: arg
+ * Return: int
+ */
 int main(int argc, char const *argv[])
 {
 	int file_d, i, is_64;
