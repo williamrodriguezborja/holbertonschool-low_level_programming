@@ -14,8 +14,8 @@
 #define ELF_64 ("ELF64")
 #define ELF_32 ("ELF32")
 #define DATA_NONE_STR "Unknown data format."
-#define DATA_2L_STR "Two's complement, little-endian."
-#define DATA_2M_STR "Two's complement, big-endian."
+#define DATA_2L_STR "2's complement, little endian"
+#define DATA_2M_STR "2's complement, big-endian."
 #define CLASS ("  Class:                             %s\n")
 #define DATA ("  Data:                              %s\n")
 #define VERSION ("  Version:                           %s\n")
@@ -26,7 +26,7 @@
 	do { \
 		printf("ELF Header:\n  Magic:   ");\
 		for (i = 0; i <= LAST_IDENT; i++)  \
-			printf("%x%c", header->e_ident[i], ((i == LAST_IDENT) ? '\n' : ' ')); \
+			printf("%02x%c", header->e_ident[i], ((i == LAST_IDENT) ? '\n' : ' ')); \
 	} while (0)
 
 #define PRINT_CLASS(is_64) \
@@ -63,7 +63,7 @@
 		switch (header->e_ident[EI_OSABI])                \
 		{                                                 \
 		case ELFOSABI_NONE:                               \
-			printf(OS_ABI, "UNIX System V ABI");          \
+			printf(OS_ABI, "UNIX System V");          \
 			break;                                        \
 		case ELFOSABI_HPUX:                               \
 			printf(OS_ABI, "HP-UX ABI");                  \
