@@ -5,8 +5,10 @@
 int main(void)
 {
     printf("%d\n", getpid());
+    printf("%d\n", getppid());
+    while (1)
+    {
 
-    printf("%d\n", getppid());
-    printf("%d\n", getppid());
+    }
     return (EXIT_SUCCESS);
 }
