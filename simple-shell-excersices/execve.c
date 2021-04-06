@@ -9,12 +9,11 @@
 void execute(char *argv[], char *envp[])
 {
 	char *path_command;
-	char *command = argv[0];
+	char *command; 
 
-	if (check_equal(argv[0], "exit"))
-		exit(0);
-
-	path_command = _which(command);
+	command = argv[0];
+	
+	path_command = _which(command, envp);
 
 	if (path_command)
 	{
@@ -22,9 +21,10 @@ void execute(char *argv[], char *envp[])
 			perror("Error:");
 		return;
 	}
+
+	
 	write(STDOUT_FILENO, "Command not Found\n", 19);
 }
-
 /**
  * execute_child - execute command in new child procces
  * @argv: parameters
@@ -32,10 +32,10 @@ void execute(char *argv[], char *envp[])
  */
 void execute_child(char *argv[], char *envp[])
 {
-	pid_t child;
+	pid_t child; 
 	int signal;
 
-	child = fork();
+	child = fork(); 
 
 	if (child == -1)
 		perror("Fork() failed");
@@ -44,5 +44,15 @@ void execute_child(char *argv[], char *envp[])
 		execute(argv, envp);
 
 	if (child > 0)
+	{
 		wait(&signal);
+		kill(child, SIGKILL);
+		free(argv);
+	}
+		
 }
+
+
+
+
+

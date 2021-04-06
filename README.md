@@ -1,13 +1,11 @@
 # Low Level Programming
 <img src="https://blog.holbertonschool.com/wp-content/uploads/2020/04/unnamed-2.png" alt="holbie" width="100" style="margin-left: 5em">
 
-This is a low level learning project created in C language programming 
-
 ## Usage
 
 The flags for correct compilation
 ```
-    gcc -Wall -Werror -Wextra -pedantic --std=c89 
+    gcc -Wall -Werror -Wextra -pedantic --std=c89
 ```
 
 ## Projects
@@ -21,5 +19,3 @@ Project| Description
 # Autor
 
 [@williamzborja](https://github.com/williamzborja)
-
-

@@ -6,7 +6,7 @@
 void __attribute__((constructor)) before()
 {
 	setenv("TERM", "xterm-256color", 0); /*Need this for clear command*/
-	signal(SIGINT, signal_handler); /* callback for SIGINT signal [crtl + c]*/
+		 /* callback for SIGINT signal [crtl + c]*/
 }
 /**
  * main - execute simple shell
@@ -17,12 +17,14 @@ void __attribute__((constructor)) before()
  */
 int main(int argc, char *argv[], char *envp[])
 {
+	signal(SIGINT, signal_handler); /*espera la senal 2 [CTRL + C].  cuando llegue ejecute la funcion de la derecha*/
+
 	if (argc != 1)
 	{
 		execute(argv, envp); /*Execute without fork command*/
 		return (EXIT_SUCCESS);
 	}
-	write_welcome();				/*welcome message*/
+	write_welcome(); /*welcome message*/
 	while (1)
 		prompt(envp);
 	return (EXIT_SUCCESS);

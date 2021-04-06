@@ -1,6 +1,10 @@
 #include "shell.h"
 
-/
+/**
+ * _str_copy - copy text to dest
+ * @text: text one
+ * @dest: destination
+ */
 void _str_copy(char *text, char *dest)
 {
 	size_t size;
@@ -10,7 +14,11 @@ void _str_copy(char *text, char *dest)
 	for (size = 0; text[size]; size++)
 		dest[size] = text[size];
 }
-
+/**
+ * _str_len - find length of string
+ * @text: char * to find length
+ * Return: size_t
+*/
 size_t _str_len(char *text)
 {
 	size_t len;
@@ -23,6 +31,12 @@ size_t _str_len(char *text)
 	return (len);
 }
 
+/**
+ * join_path - join str1 '/' str2
+ * @str1: path
+ * @str2: second part
+ * Return: new char*  full path
+ */
 char *join_path(char *str1, const char *str2)
 {
 	size_t i, j, size;
@@ -52,16 +66,20 @@ char *join_path(char *str1, const char *str2)
  */
 char **split_string(char *text, const char *delimiter)
 {
-	char **tokens;
-	char *current_token;
-	size_t size;
+	char **tokens; /* variable to store command and args*/
+	char *current_token; /* tmp variable */
+	size_t size; 
 
-	tokens = malloc(sizeof(char **) * 1024);
+	size = 0;
+	tokens = NULL;
+	current_token = NULL;
+
+	tokens = malloc(sizeof(char **) * BUFFER_SIZE);
 	if (!tokens)
 		return (NULL);
 	for (size = 0;; size++)
 	{
-		current_token = strtok(size ? NULL : text, delimiter);
+		current_token = _strtok((size ? NULL : text), delimiter);
 		if (!current_token)
 			break;
 		tokens[size] = current_token;
@@ -70,9 +88,12 @@ char **split_string(char *text, const char *delimiter)
 }
 
 /**
- * check_equal
+ * str_equal - validate if two strings are equals
+ * @text: text 1
+ * @value_to_compare: text 2
+ * Return: 0 or 1 if str is equal
 */
-int check_equal(char *text, char *value_to_compare)
+int str_equal(char *text, char *value_to_compare)
 {
 	if (!text || !value_to_compare)
 		return (0);
@@ -83,5 +104,26 @@ int check_equal(char *text, char *value_to_compare)
 	if (*text != *value_to_compare)
 		return (0);
 	/*Recursion */
-	return (check_equal(text + 1, value_to_compare + 1));
+	return (str_equal(text + 1, value_to_compare + 1));
 }
+
+/**
+ * str_contain - validate if two strings are equals
+ * @text: text 1
+ * @value_to_compare: text 2
+ * Return: 0 or 1 if str is equal
+*/
+int str_contain(char *text, char *value_to_compare)
+{
+	if (!text || !value_to_compare)
+		return (0);
+	/* edge case finalize both */
+	if (!*text || !*value_to_compare)
+		return (1);
+	/* Base case */
+	if (*text != *value_to_compare)
+		return (0);
+	/*Recursion */
+	return (str_contain(text + 1, value_to_compare + 1));
+}
+

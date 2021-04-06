@@ -9,7 +9,6 @@ main:
    syscall    ;call kernel  execute pending operations saved in previous registers
 ;------------------------------------------
 ;  start to save to register pending operations
-
    mov	rax, 60  ; system call number (sys_exit)
    mov	rdi, 0   ; exit code
    syscall       ; call kernel
