@@ -11,7 +11,7 @@ dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 	/* problem is add new node in begin */
 	dlistint_t *node;
 	/* edges cases */
-	if (!head) /*  [0x01][0x00]   */
+	if (!head) /*  main pointer   */
 		return (NULL);
 	/*  where null is false */
 
@@ -24,12 +24,14 @@ dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 	node->prev = NULL;
 	/* mathematical solve */
 	/* new_node U linked_list - conjunto */
-	if (!*head)
+	if (!*head) /* node pointer */
 	{
 		*head = node;
 		return (node);
 	}
+
 	node->next = *head;
+  (*head)->prev = node;
 	*head = node;
 	/* return new node */
 	return (node);
