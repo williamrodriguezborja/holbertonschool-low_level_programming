@@ -20,7 +20,6 @@ void free_dlistint(dlistint_t *head)
 		free(head);
 		return;
 	}
-
 	/* recursion */
 	free_dlistint(head->next);
 }
