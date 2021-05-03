@@ -6,9 +6,21 @@
  */
 void free_dlistint(dlistint_t *head)
 {
+	/*edge case*/
 	if (!head)
 		return;
-  if (head->prev)
-          free(head->prev);
+
+	/* normal */
+	if (head->prev)
+		free(head->prev);
+
+	/* case base */
+	if (head->next == NULL)
+	{
+		free(head);
+		return;
+	}
+
+	/* recursion */
 	free_dlistint(head->next);
 }
