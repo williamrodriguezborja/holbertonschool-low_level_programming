@@ -12,7 +12,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	dlistint_t *node, *tmp;
 	size_t i;
 	/* guard condition */
-	if (!h || idx < 0)
+	if (!h || (int)idx < 0)
 		return (NULL);
 	node = malloc(sizeof(dlistint_t));
 
