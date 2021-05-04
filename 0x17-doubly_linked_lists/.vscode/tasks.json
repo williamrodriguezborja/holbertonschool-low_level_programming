@@ -11,9 +11,12 @@
                 "-Werror",
                 "-Wextra",
                 "-g",
-                "3-main.c",
+                "7-main.c",
                 "3-add_dnodeint_end.c",
+                "2-add_dnodeint.c",
                 "0-print_dlistint.c",
+                "4-free_dlistint.c",
+                "7-insert_dnodeint.c",
                 "-o",
                 "${fileDirname}/a.out"
             ],
