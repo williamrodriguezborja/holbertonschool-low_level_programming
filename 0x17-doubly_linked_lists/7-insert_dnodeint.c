@@ -17,16 +17,16 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	if (idx == 0 || !*h) /* add first node case */
 		return (add_dnodeint(h, n));
 
-	node = malloc(sizeof(dlistint_t));
-	if (!node)
-		return (NULL);
-
 	for (i = 0; tmp->next; i++) /* middle case */
 	{
 		if ((i + 1) == idx)
 		{
+			node = malloc(sizeof(dlistint_t));
+			if (!node)
+				return (NULL);
+
 			node->next = tmp->next;
-			tmp->next->next->prev = node;
+			tmp->next->prev = node;
 			tmp->next = node;
 			node->prev = tmp;
 			node->n = n;
