@@ -8,44 +8,34 @@
  */
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
-	dlistint_t *node, *tmp;
+	dlistint_t *node, *tmp = *h;
 	size_t i;
 
 	if (!h || (int)idx < 0) /* guard condition */
 		return (NULL);
+
+	if (idx == 0 || !*h) /* add first node case */
+		return (add_dnodeint(h, n));
+
 	node = malloc(sizeof(dlistint_t));
 	if (!node)
 		return (NULL);
-	node->n = n;
-	if (!*h) /*guard conditions*/
-	{
-		*h = node;
-		return (node);
-	}
-	tmp = *h;
-	if (idx == 0)/* add first node case */
-	{
-		node->next = tmp;
-		tmp->prev = node;
-		*h = node;
-		return (node);
-	}
-	for (i = 0; tmp->next; i++)
+
+	for (i = 0; tmp->next; i++) /* middle case */
 	{
 		if (i == idx)
-		{	node->next = tmp;
+		{
+			node->next = tmp;
 			tmp->prev->next = node;
 			node->prev = tmp->prev;
 			tmp->prev = node;
+			node->n = n;
 			return (node);
 		}
 		tmp = tmp->next;
 	}
-	if ((i + 1) == idx)
-	{
-		tmp->next = node;
-		node->prev = tmp;
-		return (node);
-	}
+	if ((i + 1) == idx) /*end case */
+		return (add_dnodeint_end(h, n));
+
 	return (NULL);
 }
