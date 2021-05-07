@@ -9,7 +9,7 @@
  */
 dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 {
-	dlistint_t *node, *tmp;
+	dlistint_t *node, *tmp = *head;
 	/* guard condition pointer main */
 	if (!head)
 		return (NULL);
