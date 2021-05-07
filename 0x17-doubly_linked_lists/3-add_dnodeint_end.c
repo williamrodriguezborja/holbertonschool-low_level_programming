@@ -21,6 +21,8 @@ dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 		return (NULL);
 
 	node->n = n;
+	node->next = NULL;
+	node->prev = NULL;
 	/* if linked list is empty */
 	if (*head == NULL)
 	{
