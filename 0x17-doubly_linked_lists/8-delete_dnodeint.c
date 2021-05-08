@@ -3,18 +3,20 @@
 #define ERROR -1
 #define SUCCESS 1
 /**
- * main - check the code for Holberton School students.
- *
+ * delete_dnodeint_at_index - Delete node in double linked list
+ * @head: double linked list
+ * @index: int
  * Return: Always EXIT_SUCCESS.
  */
 int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 {
 	size_t i;
-	dlistint_t *tmp = *head;
+	dlistint_t *tmp;
 
 	if (!head || !*head)
 		return (ERROR);
 
+	tmp = *head;
 	if (!index)
 	{
 		if (!tmp->next)
