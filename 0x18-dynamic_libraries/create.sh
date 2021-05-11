@@ -27,6 +27,7 @@ gcc *.o -shared -o libholberton.so
 ls -la lib*
 nm -D libholberton.so
 
+
 gcc -Wall -pedantic -Werror -Wextra -L. 0-main.c -lholberton -o len
 
 export LD_LIBRARY_PATH=.:$LD_LIBRARY_PATH
