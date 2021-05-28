@@ -12,7 +12,7 @@ int main(void)
 {
     hash_table_t *ht;
 
-    ht = hash_table_create(1024);
+    ht = hash_table_create(0);
     printf("%p\n", (void *)ht);
     return (EXIT_SUCCESS);
 }
