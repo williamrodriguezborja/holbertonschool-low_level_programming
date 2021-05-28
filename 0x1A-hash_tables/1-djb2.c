@@ -13,7 +13,7 @@ unsigned long int hash_djb2(const unsigned char *str)
     hash = 5381;
     while ((c = *str++))
     {
-        printf("%c\n", c);
+        printf("%d\n", c);
         // hash = ((hash << 5) + hash) + c; /* hash * 33 + c */
     }
 
