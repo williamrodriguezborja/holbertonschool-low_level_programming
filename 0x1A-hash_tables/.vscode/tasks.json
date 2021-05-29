@@ -6,8 +6,11 @@
             "command": "/usr/bin/gcc-9",
             "args": [
                 "-g",
-                "1-main.c",
+                "3-main.c",
+                "0-hash_table_create.c",
                 "1-djb2.c",
+                "2-key_index.c",
+                "3-hash_table_set.c",
                 "-o",
                 "${fileDirname}/${fileBasenameNoExtension}"
             ],
