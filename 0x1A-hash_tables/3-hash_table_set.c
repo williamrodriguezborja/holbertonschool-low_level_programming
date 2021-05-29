@@ -30,7 +30,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	if (ht->array[index] != NULL) /* check index is busy*/
 	{
 		tmp = ht->array[index];/* TODO: update */
-		while (tmp->next)
+		while (tmp)
 		{
 			if (!strcmp(key, tmp->key))
 			{
