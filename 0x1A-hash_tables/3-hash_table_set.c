@@ -19,21 +19,17 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	/* get index */
 	index = key_index((const unsigned char *)key, ht->size);
 
-	/* create node */
-	node = malloc(sizeof(hash_node_t));
+	node = malloc(sizeof(hash_node_t)); /* create node */
 
 	if (!node)
 		return (0);
 
-	/* fill node data */
-	node->key = (char *)key;
+	node->key = (char *)key; /* fill node data */
 	node->value = (char *)value;
 
-	/* check index is busy*/
-	if (ht->array[index] != NULL)
+	if (ht->array[index] != NULL) /* check index is busy*/
 	{
-		/* TODO: update */
-		tmp = ht->array[index];
+		tmp = ht->array[index];/* TODO: update */
 		while (tmp->next)
 		{
 			if (!strcmp(key, tmp->key))
