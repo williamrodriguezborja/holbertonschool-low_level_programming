@@ -1,6 +1,12 @@
 #include "hash_tables.h"
 #include <string.h>
-
+/**
+ * hash_node - create new node 
+ * @key: key
+ * @value: value
+ * @next: next
+ * Return: hash_node_t* 
+ */
 hash_node_t *hash_node(const char *key, const char *value, hash_node_t *next)
 {
 	hash_node_t *new_node = NULL;
