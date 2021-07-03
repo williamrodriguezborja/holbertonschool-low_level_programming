@@ -1,6 +1,6 @@
 NAME = holberton
 SRC	 = main.c holberton.c
-CC			=	gcc
+CC	 = gcc
 OBJ = main.o holberton.o
 
 all: $(OBJ)
