@@ -3,10 +3,9 @@ CFLAGS= -Wall -Werror -Wextra -pedantic
 SRC=main.c holberton.c
 OBJ=$(SRC:.c=.o)
 NAME=holberton
-RM=rm
 
 all: m.h $(OBJ)
-	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+	$(CC) $(OBJ) -o $(NAME)
 clean:
 	$(RM) -f *~ $(NAME)
 oclean:
