@@ -5,7 +5,7 @@ OBJ=$(SRC:.c=.o)
 NAME=holberton
 RM=rm
 
-all: $(OBJ)
+all: m.h $(OBJ)
 	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 clean:
 	$(RM) -f *~ $(NAME)
